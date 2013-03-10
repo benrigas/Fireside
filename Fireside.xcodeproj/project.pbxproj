@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		216C6D9716EBD24E00575E6A /* FiresideSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6D9616EBD24E00575E6A /* FiresideSession.m */; };
+		216C6D9816EBD24E00575E6A /* FiresideSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6D9616EBD24E00575E6A /* FiresideSession.m */; };
+		216C6D9B16EBD6F300575E6A /* CampfireAccountsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6D9A16EBD6F300575E6A /* CampfireAccountsListViewController.m */; };
+		216C6D9C16EBD6F300575E6A /* CampfireAccountsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6D9A16EBD6F300575E6A /* CampfireAccountsListViewController.m */; };
+		216C6DA016EBE00900575E6A /* CampfireRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6D9F16EBE00900575E6A /* CampfireRoom.m */; };
+		216C6DA116EBE00900575E6A /* CampfireRoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6D9F16EBE00900575E6A /* CampfireRoom.m */; };
+		216C6DA416EBE10900575E6A /* CampfireMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DA316EBE10900575E6A /* CampfireMessage.m */; };
+		216C6DA516EBE10900575E6A /* CampfireMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DA316EBE10900575E6A /* CampfireMessage.m */; };
+		216C6DA816EBE18400575E6A /* CampfireUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DA716EBE18400575E6A /* CampfireUpload.m */; };
+		216C6DA916EBE18400575E6A /* CampfireUpload.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DA716EBE18400575E6A /* CampfireUpload.m */; };
+		216C6DAC16EBE1F300575E6A /* CampfireUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DAB16EBE1F300575E6A /* CampfireUser.m */; };
+		216C6DAD16EBE1F300575E6A /* CampfireUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DAB16EBE1F300575E6A /* CampfireUser.m */; };
+		216C6DB016EBE27E00575E6A /* CampfireTranscript.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DAF16EBE27E00575E6A /* CampfireTranscript.m */; };
+		216C6DB116EBE27E00575E6A /* CampfireTranscript.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DAF16EBE27E00575E6A /* CampfireTranscript.m */; };
+		216C6DB416EBE2C100575E6A /* CampfireAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DB316EBE2C100575E6A /* CampfireAccount.m */; };
+		216C6DB516EBE2C100575E6A /* CampfireAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DB316EBE2C100575E6A /* CampfireAccount.m */; };
+		216C6DB816EBE36F00575E6A /* CampfireSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DB716EBE36F00575E6A /* CampfireSearch.m */; };
+		216C6DB916EBE36F00575E6A /* CampfireSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DB716EBE36F00575E6A /* CampfireSearch.m */; };
+		216C6DC016EBE46700575E6A /* CampfireRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DBF16EBE46700575E6A /* CampfireRoomViewController.m */; };
+		216C6DC116EBE46700575E6A /* CampfireRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DBF16EBE46700575E6A /* CampfireRoomViewController.m */; };
 		21D348FB16EB731D00C38B54 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D348FA16EB731D00C38B54 /* UIKit.framework */; };
 		21D348FD16EB731D00C38B54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D348FC16EB731D00C38B54 /* Foundation.framework */; };
 		21D348FF16EB731D00C38B54 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D348FE16EB731D00C38B54 /* CoreGraphics.framework */; };
@@ -25,6 +45,50 @@
 		21D3492716EB731D00C38B54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D348FC16EB731D00C38B54 /* Foundation.framework */; };
 		21D3492F16EB731D00C38B54 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 21D3492D16EB731D00C38B54 /* InfoPlist.strings */; };
 		21D3493216EB731D00C38B54 /* FiresideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3493116EB731D00C38B54 /* FiresideTests.m */; };
+		21D3494716EB748600C38B54 /* MMDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3494616EB748600C38B54 /* MMDataObject.m */; };
+		21D3494816EB748600C38B54 /* MMDataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3494616EB748600C38B54 /* MMDataObject.m */; };
+		21D3494B16EB74DC00C38B54 /* LaunchPadAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3494A16EB74DC00C38B54 /* LaunchPadAccount.m */; };
+		21D3494C16EB74DC00C38B54 /* LaunchPadAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3494A16EB74DC00C38B54 /* LaunchPadAccount.m */; };
+		21D3495316EB766C00C38B54 /* LaunchPadAuthenticationAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3495216EB766C00C38B54 /* LaunchPadAuthenticationAPI.m */; };
+		21D3495416EB766C00C38B54 /* LaunchPadAuthenticationAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3495216EB766C00C38B54 /* LaunchPadAuthenticationAPI.m */; };
+		21D3496916EB76C900C38B54 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3495716EB76C900C38B54 /* AFHTTPClient.m */; };
+		21D3496A16EB76C900C38B54 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3495716EB76C900C38B54 /* AFHTTPClient.m */; };
+		21D3496B16EB76C900C38B54 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3495916EB76C900C38B54 /* AFHTTPRequestOperation.m */; };
+		21D3496C16EB76C900C38B54 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3495916EB76C900C38B54 /* AFHTTPRequestOperation.m */; };
+		21D3496D16EB76C900C38B54 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3495B16EB76C900C38B54 /* AFImageRequestOperation.m */; };
+		21D3496E16EB76C900C38B54 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3495B16EB76C900C38B54 /* AFImageRequestOperation.m */; };
+		21D3496F16EB76C900C38B54 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3495D16EB76C900C38B54 /* AFJSONRequestOperation.m */; };
+		21D3497016EB76C900C38B54 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3495D16EB76C900C38B54 /* AFJSONRequestOperation.m */; };
+		21D3497116EB76C900C38B54 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3495F16EB76C900C38B54 /* AFNetworkActivityIndicatorManager.m */; };
+		21D3497216EB76C900C38B54 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3495F16EB76C900C38B54 /* AFNetworkActivityIndicatorManager.m */; };
+		21D3497316EB76C900C38B54 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3496216EB76C900C38B54 /* AFPropertyListRequestOperation.m */; };
+		21D3497416EB76C900C38B54 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3496216EB76C900C38B54 /* AFPropertyListRequestOperation.m */; };
+		21D3497516EB76C900C38B54 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3496416EB76C900C38B54 /* AFURLConnectionOperation.m */; };
+		21D3497616EB76C900C38B54 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3496416EB76C900C38B54 /* AFURLConnectionOperation.m */; };
+		21D3497716EB76C900C38B54 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3496616EB76C900C38B54 /* AFXMLRequestOperation.m */; };
+		21D3497816EB76C900C38B54 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3496616EB76C900C38B54 /* AFXMLRequestOperation.m */; };
+		21D3497916EB76C900C38B54 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3496816EB76C900C38B54 /* UIImageView+AFNetworking.m */; };
+		21D3497A16EB76C900C38B54 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3496816EB76C900C38B54 /* UIImageView+AFNetworking.m */; };
+		21D3498216EB8A9E00C38B54 /* OAuth2WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3498116EB8A9E00C38B54 /* OAuth2WebViewController.m */; };
+		21D3498316EB8A9E00C38B54 /* OAuth2WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3498116EB8A9E00C38B54 /* OAuth2WebViewController.m */; };
+		21D3498616EB8C6100C38B54 /* WWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3498516EB8C6100C38B54 /* WWLoginViewController.m */; };
+		21D3498716EB8C6100C38B54 /* WWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3498516EB8C6100C38B54 /* WWLoginViewController.m */; };
+		21D3498A16EB971300C38B54 /* LaunchPadAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3498916EB971300C38B54 /* LaunchPadAPIClient.m */; };
+		21D3498B16EB971300C38B54 /* LaunchPadAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3498916EB971300C38B54 /* LaunchPadAPIClient.m */; };
+		21D3498D16EBB13D00C38B54 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D3498C16EBB13D00C38B54 /* MobileCoreServices.framework */; };
+		21D3498F16EBB14400C38B54 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D3498E16EBB14400C38B54 /* SystemConfiguration.framework */; };
+		21D3499216EBB2BE00C38B54 /* OAuthAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3499116EBB2BE00C38B54 /* OAuthAuthorization.m */; };
+		21D3499316EBB2BE00C38B54 /* OAuthAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3499116EBB2BE00C38B54 /* OAuthAuthorization.m */; };
+		21D3499616EBB7E600C38B54 /* LaunchPadAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3499516EBB7E600C38B54 /* LaunchPadAuthorization.m */; };
+		21D3499716EBB7E600C38B54 /* LaunchPadAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3499516EBB7E600C38B54 /* LaunchPadAuthorization.m */; };
+		21D3499A16EBB87400C38B54 /* LaunchPadIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3499916EBB87400C38B54 /* LaunchPadIdentity.m */; };
+		21D3499B16EBB87400C38B54 /* LaunchPadIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3499916EBB87400C38B54 /* LaunchPadIdentity.m */; };
+		21FACB2916EBE76B000E7A7B /* CampfireRoomAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB2816EBE76B000E7A7B /* CampfireRoomAPI.m */; };
+		21FACB2A16EBE76B000E7A7B /* CampfireRoomAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB2816EBE76B000E7A7B /* CampfireRoomAPI.m */; };
+		21FACB2F16EBE7A9000E7A7B /* CampfireAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB2E16EBE7A9000E7A7B /* CampfireAPIClient.m */; };
+		21FACB3016EBE7A9000E7A7B /* CampfireAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB2E16EBE7A9000E7A7B /* CampfireAPIClient.m */; };
+		21FACB3316EC1976000E7A7B /* CampfireRoomsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB3216EC1976000E7A7B /* CampfireRoomsListViewController.m */; };
+		21FACB3416EC1976000E7A7B /* CampfireRoomsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB3216EC1976000E7A7B /* CampfireRoomsListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +102,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		216C6D9516EBD24E00575E6A /* FiresideSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiresideSession.h; sourceTree = "<group>"; };
+		216C6D9616EBD24E00575E6A /* FiresideSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiresideSession.m; sourceTree = "<group>"; };
+		216C6D9916EBD6F300575E6A /* CampfireAccountsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireAccountsListViewController.h; sourceTree = "<group>"; };
+		216C6D9A16EBD6F300575E6A /* CampfireAccountsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireAccountsListViewController.m; sourceTree = "<group>"; };
+		216C6D9E16EBE00900575E6A /* CampfireRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireRoom.h; sourceTree = "<group>"; };
+		216C6D9F16EBE00900575E6A /* CampfireRoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireRoom.m; sourceTree = "<group>"; };
+		216C6DA216EBE10900575E6A /* CampfireMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireMessage.h; sourceTree = "<group>"; };
+		216C6DA316EBE10900575E6A /* CampfireMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireMessage.m; sourceTree = "<group>"; };
+		216C6DA616EBE18400575E6A /* CampfireUpload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireUpload.h; sourceTree = "<group>"; };
+		216C6DA716EBE18400575E6A /* CampfireUpload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireUpload.m; sourceTree = "<group>"; };
+		216C6DAA16EBE1F300575E6A /* CampfireUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireUser.h; sourceTree = "<group>"; };
+		216C6DAB16EBE1F300575E6A /* CampfireUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireUser.m; sourceTree = "<group>"; };
+		216C6DAE16EBE27E00575E6A /* CampfireTranscript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireTranscript.h; sourceTree = "<group>"; };
+		216C6DAF16EBE27E00575E6A /* CampfireTranscript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireTranscript.m; sourceTree = "<group>"; };
+		216C6DB216EBE2C100575E6A /* CampfireAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireAccount.h; sourceTree = "<group>"; };
+		216C6DB316EBE2C100575E6A /* CampfireAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireAccount.m; sourceTree = "<group>"; };
+		216C6DB616EBE36E00575E6A /* CampfireSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireSearch.h; sourceTree = "<group>"; };
+		216C6DB716EBE36F00575E6A /* CampfireSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireSearch.m; sourceTree = "<group>"; };
+		216C6DBE16EBE46700575E6A /* CampfireRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireRoomViewController.h; sourceTree = "<group>"; };
+		216C6DBF16EBE46700575E6A /* CampfireRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireRoomViewController.m; sourceTree = "<group>"; };
 		21D348F716EB731D00C38B54 /* Fireside.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fireside.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D348FA16EB731D00C38B54 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21D348FC16EB731D00C38B54 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,6 +147,51 @@
 		21D3492E16EB731D00C38B54 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		21D3493016EB731D00C38B54 /* FiresideTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FiresideTests.h; sourceTree = "<group>"; };
 		21D3493116EB731D00C38B54 /* FiresideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FiresideTests.m; sourceTree = "<group>"; };
+		21D3494516EB748600C38B54 /* MMDataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDataObject.h; sourceTree = "<group>"; };
+		21D3494616EB748600C38B54 /* MMDataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDataObject.m; sourceTree = "<group>"; };
+		21D3494916EB74DC00C38B54 /* LaunchPadAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchPadAccount.h; sourceTree = "<group>"; };
+		21D3494A16EB74DC00C38B54 /* LaunchPadAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchPadAccount.m; sourceTree = "<group>"; };
+		21D3495116EB766C00C38B54 /* LaunchPadAuthenticationAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchPadAuthenticationAPI.h; sourceTree = "<group>"; };
+		21D3495216EB766C00C38B54 /* LaunchPadAuthenticationAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchPadAuthenticationAPI.m; sourceTree = "<group>"; };
+		21D3495616EB76C900C38B54 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
+		21D3495716EB76C900C38B54 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
+		21D3495816EB76C900C38B54 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		21D3495916EB76C900C38B54 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		21D3495A16EB76C900C38B54 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageRequestOperation.h; sourceTree = "<group>"; };
+		21D3495B16EB76C900C38B54 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageRequestOperation.m; sourceTree = "<group>"; };
+		21D3495C16EB76C900C38B54 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFJSONRequestOperation.h; sourceTree = "<group>"; };
+		21D3495D16EB76C900C38B54 /* AFJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFJSONRequestOperation.m; sourceTree = "<group>"; };
+		21D3495E16EB76C900C38B54 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		21D3495F16EB76C900C38B54 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		21D3496016EB76C900C38B54 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		21D3496116EB76C900C38B54 /* AFPropertyListRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPropertyListRequestOperation.h; sourceTree = "<group>"; };
+		21D3496216EB76C900C38B54 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		21D3496316EB76C900C38B54 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		21D3496416EB76C900C38B54 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		21D3496516EB76C900C38B54 /* AFXMLRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFXMLRequestOperation.h; sourceTree = "<group>"; };
+		21D3496616EB76C900C38B54 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
+		21D3496716EB76C900C38B54 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		21D3496816EB76C900C38B54 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		21D3498016EB8A9E00C38B54 /* OAuth2WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuth2WebViewController.h; sourceTree = "<group>"; };
+		21D3498116EB8A9E00C38B54 /* OAuth2WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuth2WebViewController.m; sourceTree = "<group>"; };
+		21D3498416EB8C6100C38B54 /* WWLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWLoginViewController.h; sourceTree = "<group>"; };
+		21D3498516EB8C6100C38B54 /* WWLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWLoginViewController.m; sourceTree = "<group>"; };
+		21D3498816EB971300C38B54 /* LaunchPadAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchPadAPIClient.h; sourceTree = "<group>"; };
+		21D3498916EB971300C38B54 /* LaunchPadAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchPadAPIClient.m; sourceTree = "<group>"; };
+		21D3498C16EBB13D00C38B54 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		21D3498E16EBB14400C38B54 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		21D3499016EBB2BE00C38B54 /* OAuthAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthAuthorization.h; sourceTree = "<group>"; };
+		21D3499116EBB2BE00C38B54 /* OAuthAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthAuthorization.m; sourceTree = "<group>"; };
+		21D3499416EBB7E600C38B54 /* LaunchPadAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchPadAuthorization.h; sourceTree = "<group>"; };
+		21D3499516EBB7E600C38B54 /* LaunchPadAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchPadAuthorization.m; sourceTree = "<group>"; };
+		21D3499816EBB87400C38B54 /* LaunchPadIdentity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchPadIdentity.h; sourceTree = "<group>"; };
+		21D3499916EBB87400C38B54 /* LaunchPadIdentity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchPadIdentity.m; sourceTree = "<group>"; };
+		21FACB2716EBE76B000E7A7B /* CampfireRoomAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireRoomAPI.h; sourceTree = "<group>"; };
+		21FACB2816EBE76B000E7A7B /* CampfireRoomAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireRoomAPI.m; sourceTree = "<group>"; };
+		21FACB2D16EBE7A9000E7A7B /* CampfireAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireAPIClient.h; sourceTree = "<group>"; };
+		21FACB2E16EBE7A9000E7A7B /* CampfireAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireAPIClient.m; sourceTree = "<group>"; };
+		21FACB3116EC1976000E7A7B /* CampfireRoomsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireRoomsListViewController.h; sourceTree = "<group>"; };
+		21FACB3216EC1976000E7A7B /* CampfireRoomsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireRoomsListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +199,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D3498F16EBB14400C38B54 /* SystemConfiguration.framework in Frameworks */,
+				21D3498D16EBB13D00C38B54 /* MobileCoreServices.framework in Frameworks */,
 				21D348FB16EB731D00C38B54 /* UIKit.framework in Frameworks */,
 				21D348FD16EB731D00C38B54 /* Foundation.framework in Frameworks */,
 				21D348FF16EB731D00C38B54 /* CoreGraphics.framework in Frameworks */,
@@ -89,10 +220,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		216C6D9D16EBDF2B00575E6A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				21D3498416EB8C6100C38B54 /* WWLoginViewController.h */,
+				21D3498516EB8C6100C38B54 /* WWLoginViewController.m */,
+				216C6D9916EBD6F300575E6A /* CampfireAccountsListViewController.h */,
+				216C6D9A16EBD6F300575E6A /* CampfireAccountsListViewController.m */,
+				216C6DBE16EBE46700575E6A /* CampfireRoomViewController.h */,
+				216C6DBF16EBE46700575E6A /* CampfireRoomViewController.m */,
+				21FACB3116EC1976000E7A7B /* CampfireRoomsListViewController.h */,
+				21FACB3216EC1976000E7A7B /* CampfireRoomsListViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		21D348EE16EB731D00C38B54 = {
 			isa = PBXGroup;
 			children = (
 				21D3490016EB731D00C38B54 /* Fireside */,
+				21D3499C16EBB99E00C38B54 /* MMDataObject */,
+				21D3495516EB76C900C38B54 /* AFNetworking */,
 				21D3492A16EB731D00C38B54 /* FiresideTests */,
 				21D348F916EB731D00C38B54 /* Frameworks */,
 				21D348F816EB731D00C38B54 /* Products */,
@@ -111,6 +259,8 @@
 		21D348F916EB731D00C38B54 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				21D3498E16EBB14400C38B54 /* SystemConfiguration.framework */,
+				21D3498C16EBB13D00C38B54 /* MobileCoreServices.framework */,
 				21D348FA16EB731D00C38B54 /* UIKit.framework */,
 				21D348FC16EB731D00C38B54 /* Foundation.framework */,
 				21D348FE16EB731D00C38B54 /* CoreGraphics.framework */,
@@ -122,6 +272,9 @@
 		21D3490016EB731D00C38B54 /* Fireside */ = {
 			isa = PBXGroup;
 			children = (
+				216C6D9D16EBDF2B00575E6A /* View Controllers */,
+				21D3495016EB763B00C38B54 /* API Client */,
+				21D3494416EB747000C38B54 /* Model */,
 				21D3490916EB731D00C38B54 /* WWAppDelegate.h */,
 				21D3490A16EB731D00C38B54 /* WWAppDelegate.m */,
 				21D3491216EB731D00C38B54 /* MainStoryboard_iPhone.storyboard */,
@@ -166,6 +319,107 @@
 				21D3492D16EB731D00C38B54 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		21D3494416EB747000C38B54 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				216C6D9516EBD24E00575E6A /* FiresideSession.h */,
+				216C6D9616EBD24E00575E6A /* FiresideSession.m */,
+				21D3494916EB74DC00C38B54 /* LaunchPadAccount.h */,
+				21D3494A16EB74DC00C38B54 /* LaunchPadAccount.m */,
+				21D3499016EBB2BE00C38B54 /* OAuthAuthorization.h */,
+				21D3499116EBB2BE00C38B54 /* OAuthAuthorization.m */,
+				21D3499416EBB7E600C38B54 /* LaunchPadAuthorization.h */,
+				21D3499516EBB7E600C38B54 /* LaunchPadAuthorization.m */,
+				21D3499816EBB87400C38B54 /* LaunchPadIdentity.h */,
+				21D3499916EBB87400C38B54 /* LaunchPadIdentity.m */,
+				216C6D9E16EBE00900575E6A /* CampfireRoom.h */,
+				216C6D9F16EBE00900575E6A /* CampfireRoom.m */,
+				216C6DA216EBE10900575E6A /* CampfireMessage.h */,
+				216C6DA316EBE10900575E6A /* CampfireMessage.m */,
+				216C6DA616EBE18400575E6A /* CampfireUpload.h */,
+				216C6DA716EBE18400575E6A /* CampfireUpload.m */,
+				216C6DAA16EBE1F300575E6A /* CampfireUser.h */,
+				216C6DAB16EBE1F300575E6A /* CampfireUser.m */,
+				216C6DAE16EBE27E00575E6A /* CampfireTranscript.h */,
+				216C6DAF16EBE27E00575E6A /* CampfireTranscript.m */,
+				216C6DB216EBE2C100575E6A /* CampfireAccount.h */,
+				216C6DB316EBE2C100575E6A /* CampfireAccount.m */,
+				216C6DB616EBE36E00575E6A /* CampfireSearch.h */,
+				216C6DB716EBE36F00575E6A /* CampfireSearch.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		21D3495016EB763B00C38B54 /* API Client */ = {
+			isa = PBXGroup;
+			children = (
+				21FACB2C16EBE781000E7A7B /* Campfire */,
+				21FACB2B16EBE77B000E7A7B /* LaunchPad */,
+			);
+			name = "API Client";
+			sourceTree = "<group>";
+		};
+		21D3495516EB76C900C38B54 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				21D3495616EB76C900C38B54 /* AFHTTPClient.h */,
+				21D3495716EB76C900C38B54 /* AFHTTPClient.m */,
+				21D3495816EB76C900C38B54 /* AFHTTPRequestOperation.h */,
+				21D3495916EB76C900C38B54 /* AFHTTPRequestOperation.m */,
+				21D3495A16EB76C900C38B54 /* AFImageRequestOperation.h */,
+				21D3495B16EB76C900C38B54 /* AFImageRequestOperation.m */,
+				21D3495C16EB76C900C38B54 /* AFJSONRequestOperation.h */,
+				21D3495D16EB76C900C38B54 /* AFJSONRequestOperation.m */,
+				21D3495E16EB76C900C38B54 /* AFNetworkActivityIndicatorManager.h */,
+				21D3495F16EB76C900C38B54 /* AFNetworkActivityIndicatorManager.m */,
+				21D3496016EB76C900C38B54 /* AFNetworking.h */,
+				21D3496116EB76C900C38B54 /* AFPropertyListRequestOperation.h */,
+				21D3496216EB76C900C38B54 /* AFPropertyListRequestOperation.m */,
+				21D3496316EB76C900C38B54 /* AFURLConnectionOperation.h */,
+				21D3496416EB76C900C38B54 /* AFURLConnectionOperation.m */,
+				21D3496516EB76C900C38B54 /* AFXMLRequestOperation.h */,
+				21D3496616EB76C900C38B54 /* AFXMLRequestOperation.m */,
+				21D3496716EB76C900C38B54 /* UIImageView+AFNetworking.h */,
+				21D3496816EB76C900C38B54 /* UIImageView+AFNetworking.m */,
+			);
+			name = AFNetworking;
+			path = Fireside/AFNetworking;
+			sourceTree = "<group>";
+		};
+		21D3499C16EBB99E00C38B54 /* MMDataObject */ = {
+			isa = PBXGroup;
+			children = (
+				21D3494516EB748600C38B54 /* MMDataObject.h */,
+				21D3494616EB748600C38B54 /* MMDataObject.m */,
+			);
+			name = MMDataObject;
+			path = Fireside;
+			sourceTree = "<group>";
+		};
+		21FACB2B16EBE77B000E7A7B /* LaunchPad */ = {
+			isa = PBXGroup;
+			children = (
+				21D3495116EB766C00C38B54 /* LaunchPadAuthenticationAPI.h */,
+				21D3495216EB766C00C38B54 /* LaunchPadAuthenticationAPI.m */,
+				21D3498016EB8A9E00C38B54 /* OAuth2WebViewController.h */,
+				21D3498116EB8A9E00C38B54 /* OAuth2WebViewController.m */,
+				21D3498816EB971300C38B54 /* LaunchPadAPIClient.h */,
+				21D3498916EB971300C38B54 /* LaunchPadAPIClient.m */,
+			);
+			name = LaunchPad;
+			sourceTree = "<group>";
+		};
+		21FACB2C16EBE781000E7A7B /* Campfire */ = {
+			isa = PBXGroup;
+			children = (
+				21FACB2716EBE76B000E7A7B /* CampfireRoomAPI.h */,
+				21FACB2816EBE76B000E7A7B /* CampfireRoomAPI.m */,
+				21FACB2D16EBE7A9000E7A7B /* CampfireAPIClient.h */,
+				21FACB2E16EBE7A9000E7A7B /* CampfireAPIClient.m */,
+			);
+			name = Campfire;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +538,37 @@
 				21D3490B16EB731D00C38B54 /* WWAppDelegate.m in Sources */,
 				21D3491A16EB731D00C38B54 /* WWMasterViewController.m in Sources */,
 				21D3491D16EB731D00C38B54 /* WWDetailViewController.m in Sources */,
+				21D3494716EB748600C38B54 /* MMDataObject.m in Sources */,
+				21D3494B16EB74DC00C38B54 /* LaunchPadAccount.m in Sources */,
+				21D3495316EB766C00C38B54 /* LaunchPadAuthenticationAPI.m in Sources */,
+				21D3496916EB76C900C38B54 /* AFHTTPClient.m in Sources */,
+				21D3496B16EB76C900C38B54 /* AFHTTPRequestOperation.m in Sources */,
+				21D3496D16EB76C900C38B54 /* AFImageRequestOperation.m in Sources */,
+				21D3496F16EB76C900C38B54 /* AFJSONRequestOperation.m in Sources */,
+				21D3497116EB76C900C38B54 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				21D3497316EB76C900C38B54 /* AFPropertyListRequestOperation.m in Sources */,
+				21D3497516EB76C900C38B54 /* AFURLConnectionOperation.m in Sources */,
+				21D3497716EB76C900C38B54 /* AFXMLRequestOperation.m in Sources */,
+				21D3497916EB76C900C38B54 /* UIImageView+AFNetworking.m in Sources */,
+				21D3498216EB8A9E00C38B54 /* OAuth2WebViewController.m in Sources */,
+				21D3498616EB8C6100C38B54 /* WWLoginViewController.m in Sources */,
+				21D3498A16EB971300C38B54 /* LaunchPadAPIClient.m in Sources */,
+				21D3499216EBB2BE00C38B54 /* OAuthAuthorization.m in Sources */,
+				21D3499616EBB7E600C38B54 /* LaunchPadAuthorization.m in Sources */,
+				21D3499A16EBB87400C38B54 /* LaunchPadIdentity.m in Sources */,
+				216C6D9716EBD24E00575E6A /* FiresideSession.m in Sources */,
+				216C6D9B16EBD6F300575E6A /* CampfireAccountsListViewController.m in Sources */,
+				216C6DA016EBE00900575E6A /* CampfireRoom.m in Sources */,
+				216C6DA416EBE10900575E6A /* CampfireMessage.m in Sources */,
+				216C6DA816EBE18400575E6A /* CampfireUpload.m in Sources */,
+				216C6DAC16EBE1F300575E6A /* CampfireUser.m in Sources */,
+				216C6DB016EBE27E00575E6A /* CampfireTranscript.m in Sources */,
+				216C6DB416EBE2C100575E6A /* CampfireAccount.m in Sources */,
+				216C6DB816EBE36F00575E6A /* CampfireSearch.m in Sources */,
+				216C6DC016EBE46700575E6A /* CampfireRoomViewController.m in Sources */,
+				21FACB2916EBE76B000E7A7B /* CampfireRoomAPI.m in Sources */,
+				21FACB2F16EBE7A9000E7A7B /* CampfireAPIClient.m in Sources */,
+				21FACB3316EC1976000E7A7B /* CampfireRoomsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +577,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				21D3493216EB731D00C38B54 /* FiresideTests.m in Sources */,
+				21D3494816EB748600C38B54 /* MMDataObject.m in Sources */,
+				21D3494C16EB74DC00C38B54 /* LaunchPadAccount.m in Sources */,
+				21D3495416EB766C00C38B54 /* LaunchPadAuthenticationAPI.m in Sources */,
+				21D3496A16EB76C900C38B54 /* AFHTTPClient.m in Sources */,
+				21D3496C16EB76C900C38B54 /* AFHTTPRequestOperation.m in Sources */,
+				21D3496E16EB76C900C38B54 /* AFImageRequestOperation.m in Sources */,
+				21D3497016EB76C900C38B54 /* AFJSONRequestOperation.m in Sources */,
+				21D3497216EB76C900C38B54 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				21D3497416EB76C900C38B54 /* AFPropertyListRequestOperation.m in Sources */,
+				21D3497616EB76C900C38B54 /* AFURLConnectionOperation.m in Sources */,
+				21D3497816EB76C900C38B54 /* AFXMLRequestOperation.m in Sources */,
+				21D3497A16EB76C900C38B54 /* UIImageView+AFNetworking.m in Sources */,
+				21D3498316EB8A9E00C38B54 /* OAuth2WebViewController.m in Sources */,
+				21D3498716EB8C6100C38B54 /* WWLoginViewController.m in Sources */,
+				21D3498B16EB971300C38B54 /* LaunchPadAPIClient.m in Sources */,
+				21D3499316EBB2BE00C38B54 /* OAuthAuthorization.m in Sources */,
+				21D3499716EBB7E600C38B54 /* LaunchPadAuthorization.m in Sources */,
+				21D3499B16EBB87400C38B54 /* LaunchPadIdentity.m in Sources */,
+				216C6D9816EBD24E00575E6A /* FiresideSession.m in Sources */,
+				216C6D9C16EBD6F300575E6A /* CampfireAccountsListViewController.m in Sources */,
+				216C6DA116EBE00900575E6A /* CampfireRoom.m in Sources */,
+				216C6DA516EBE10900575E6A /* CampfireMessage.m in Sources */,
+				216C6DA916EBE18400575E6A /* CampfireUpload.m in Sources */,
+				216C6DAD16EBE1F300575E6A /* CampfireUser.m in Sources */,
+				216C6DB116EBE27E00575E6A /* CampfireTranscript.m in Sources */,
+				216C6DB516EBE2C100575E6A /* CampfireAccount.m in Sources */,
+				216C6DB916EBE36F00575E6A /* CampfireSearch.m in Sources */,
+				216C6DC116EBE46700575E6A /* CampfireRoomViewController.m in Sources */,
+				21FACB2A16EBE76B000E7A7B /* CampfireRoomAPI.m in Sources */,
+				21FACB3016EBE7A9000E7A7B /* CampfireAPIClient.m in Sources */,
+				21FACB3416EC1976000E7A7B /* CampfireRoomsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +790,7 @@
 				21D3493716EB731D00C38B54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21D3493816EB731D00C38B54 /* Build configuration list for PBXNativeTarget "FiresideTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +799,7 @@
 				21D3493A16EB731D00C38B54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

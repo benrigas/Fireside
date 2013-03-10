@@ -12,6 +12,7 @@
 
 @interface WWMasterViewController () {
     NSMutableArray *_objects;
+    
 }
 @end
 
