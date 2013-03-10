@@ -84,6 +84,7 @@
     [[FiresideSession sharedInstance] setCurrentLaunchPadAccount:account];
     
     NSURL* accountUrl = [NSURL URLWithString:account.href];
+#warning Refactor this
     [[CampfireAPIClient sharedInstance] initWithBaseURL:accountUrl];
     NSString* accountToken = [[[FiresideSession sharedInstance] oAuthAuthorization] accessToken];
     [[CampfireAPIClient sharedInstance] setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"BEARER %@", accountToken]];

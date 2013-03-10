@@ -10,4 +10,15 @@
 
 @implementation CampfireMessage
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        [self setAlias:@"room_id" forPropertyName:@"roomId"];
+        [self setAlias:@"user_id" forPropertyName:@"userId"];
+        [self setAlias:@"created_at" forPropertyName:@"createdAt"];
+    }
+    return self;
+}
+
 @end

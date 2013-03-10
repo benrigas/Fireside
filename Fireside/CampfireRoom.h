@@ -27,7 +27,7 @@
  </room>
  */
 
-@property (nonatomic, strong) NSNumber* fooid;
+@property (nonatomic, strong) NSNumber* id;
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, strong) NSString* topic;
 @property (nonatomic, strong) NSNumber* membershipLimit;

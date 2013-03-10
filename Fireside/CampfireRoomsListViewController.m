@@ -40,6 +40,14 @@
     [CampfireRoomAPI getRoomsSuccess:^(NSArray *rooms) {
         roomList = rooms;
         [self.roomsTableView reloadData];
+        
+//        CampfireRoom* room = [roomList objectAtIndex:0];
+//        [CampfireRoomAPI getRoomWithId:room.id success:^(CampfireRoom *room) {
+//            NSLog(@"room!");
+//        } failure:^(NSError *error) {
+//            NSLog(@"room details: %@", error);
+//        }];
+        
     } failure:^(NSError *error) {
         NSLog(@"error getting room list: %@", error);
     }];
@@ -82,7 +90,11 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     CampfireRoom* campfireRoom = [roomList objectAtIndex:indexPath.row];
 
-    [self performSegueWithIdentifier:@"ShowRoom" sender:campfireRoom];
+    [CampfireRoomAPI joinRoom:campfireRoom success:^{
+        [self performSegueWithIdentifier:@"ShowRoom" sender:campfireRoom];
+    } failure:^(NSError *error) {
+        NSLog(@"error joining room: %@", error);
+    }];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

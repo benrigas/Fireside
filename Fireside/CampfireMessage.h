@@ -34,6 +34,8 @@
 @property (nonatomic, strong) NSString* body;
 @property (nonatomic, strong) NSDate* createdAt;
 @property (nonatomic, strong) NSString* type; // maybe ENUM
-@property (nonatomic) BOOL starred;
+@property (nonatomic, strong) NSNumber* starred;
+@property (nonatomic, strong) NSString* description;
+@property (nonatomic, strong) NSString* url;
 
 @end

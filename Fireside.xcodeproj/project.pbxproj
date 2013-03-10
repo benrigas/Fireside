@@ -83,6 +83,8 @@
 		21D3499716EBB7E600C38B54 /* LaunchPadAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3499516EBB7E600C38B54 /* LaunchPadAuthorization.m */; };
 		21D3499A16EBB87400C38B54 /* LaunchPadIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3499916EBB87400C38B54 /* LaunchPadIdentity.m */; };
 		21D3499B16EBB87400C38B54 /* LaunchPadIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3499916EBB87400C38B54 /* LaunchPadIdentity.m */; };
+		21D480D216ECC3D8005E1D22 /* CampfireMessageAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D480D116ECC3D8005E1D22 /* CampfireMessageAPI.m */; };
+		21D480D316ECC3D8005E1D22 /* CampfireMessageAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D480D116ECC3D8005E1D22 /* CampfireMessageAPI.m */; };
 		21FACB2916EBE76B000E7A7B /* CampfireRoomAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB2816EBE76B000E7A7B /* CampfireRoomAPI.m */; };
 		21FACB2A16EBE76B000E7A7B /* CampfireRoomAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB2816EBE76B000E7A7B /* CampfireRoomAPI.m */; };
 		21FACB2F16EBE7A9000E7A7B /* CampfireAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB2E16EBE7A9000E7A7B /* CampfireAPIClient.m */; };
@@ -186,6 +188,8 @@
 		21D3499516EBB7E600C38B54 /* LaunchPadAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchPadAuthorization.m; sourceTree = "<group>"; };
 		21D3499816EBB87400C38B54 /* LaunchPadIdentity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchPadIdentity.h; sourceTree = "<group>"; };
 		21D3499916EBB87400C38B54 /* LaunchPadIdentity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchPadIdentity.m; sourceTree = "<group>"; };
+		21D480D016ECC3D8005E1D22 /* CampfireMessageAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireMessageAPI.h; sourceTree = "<group>"; };
+		21D480D116ECC3D8005E1D22 /* CampfireMessageAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireMessageAPI.m; sourceTree = "<group>"; };
 		21FACB2716EBE76B000E7A7B /* CampfireRoomAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireRoomAPI.h; sourceTree = "<group>"; };
 		21FACB2816EBE76B000E7A7B /* CampfireRoomAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireRoomAPI.m; sourceTree = "<group>"; };
 		21FACB2D16EBE7A9000E7A7B /* CampfireAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireAPIClient.h; sourceTree = "<group>"; };
@@ -418,6 +422,8 @@
 				21FACB2816EBE76B000E7A7B /* CampfireRoomAPI.m */,
 				21FACB2D16EBE7A9000E7A7B /* CampfireAPIClient.h */,
 				21FACB2E16EBE7A9000E7A7B /* CampfireAPIClient.m */,
+				21D480D016ECC3D8005E1D22 /* CampfireMessageAPI.h */,
+				21D480D116ECC3D8005E1D22 /* CampfireMessageAPI.m */,
 			);
 			name = Campfire;
 			sourceTree = "<group>";
@@ -569,6 +575,7 @@
 				21FACB2916EBE76B000E7A7B /* CampfireRoomAPI.m in Sources */,
 				21FACB2F16EBE7A9000E7A7B /* CampfireAPIClient.m in Sources */,
 				21FACB3316EC1976000E7A7B /* CampfireRoomsListViewController.m in Sources */,
+				21D480D216ECC3D8005E1D22 /* CampfireMessageAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +615,7 @@
 				21FACB2A16EBE76B000E7A7B /* CampfireRoomAPI.m in Sources */,
 				21FACB3016EBE7A9000E7A7B /* CampfireAPIClient.m in Sources */,
 				21FACB3416EC1976000E7A7B /* CampfireRoomsListViewController.m in Sources */,
+				21D480D316ECC3D8005E1D22 /* CampfireMessageAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

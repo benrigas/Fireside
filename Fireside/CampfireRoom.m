@@ -7,6 +7,7 @@
 //
 
 #import "CampfireRoom.h"
+#import "CampfireUser.h"
 
 @implementation CampfireRoom
 
@@ -19,7 +20,8 @@
         [self setAlias:@"active_token_value" forPropertyName:@"activeTokenValue"];
         [self setAlias:@"updated_at" forPropertyName:@"updatedAt"];
         [self setAlias:@"open_to_guests" forPropertyName:@"openToGuests"];
-        [self setAlias:@"id" forPropertyName:@"fooid"];
+        
+        [self registerClass:[CampfireUser class] forCollectionName:@"users"];
     }
     return self;
 }
