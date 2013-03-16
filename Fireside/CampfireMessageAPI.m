@@ -12,7 +12,7 @@
 @implementation CampfireMessageAPI
 
 // speak message
-+ (void) speakMessage:(CampfireMessage*)message toRoom:(CampfireRoom*)room success:(void (^)(void))success
++ (void) speakMessage:(CampfireMessage*)message toRoom:(CampfireRoom*)room success:(void (^)(CampfireMessage* message))success
               failure:(void (^)(NSError* error))failure {
     
     NSString* urlPath = [NSString stringWithFormat:@"/room/%@/speak.json", room.id];
@@ -22,7 +22,9 @@
     
     [[CampfireAPIClient sharedInstance] postPath:urlPath parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
-            success();
+            NSLog(@"response from sending: %@", responseObject);
+            CampfireMessage* message = [[CampfireMessage alloc] initWithAttributes:[responseObject objectForKey:@"message"]];
+            success(message);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         //NSLog(@"resp: %@",operation.responseString);

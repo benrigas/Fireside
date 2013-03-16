@@ -13,7 +13,7 @@
 
 @interface CampfireMessageAPI : NSObject
 
-+ (void) speakMessage:(CampfireMessage*)message toRoom:(CampfireRoom*)room success:(void (^)(void))success
++ (void) speakMessage:(CampfireMessage*)message toRoom:(CampfireRoom*)room success:(void (^)(CampfireMessage* message))success
               failure:(void (^)(NSError* error))failure;
 
 + (void) getRecentMessagesForRoom:(CampfireRoom*)room limit:(NSNumber*)limit sinceMessageId:(NSNumber*)sinceMessageId
