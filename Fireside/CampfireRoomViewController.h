@@ -10,6 +10,7 @@
 #import "CampfireMessage.h"
 #import "CampfireRoom.h"
 #import "CampfireRoomAPI.h"
+#import "REMenu.h"
 
 @interface CampfireRoomViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

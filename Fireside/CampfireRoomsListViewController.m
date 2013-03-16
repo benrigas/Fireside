@@ -9,6 +9,7 @@
 #import "CampfireRoomsListViewController.h"
 #import "CampfireRoomAPI.h"
 #import "CampfireRoom.h"
+#import "FiresideSession.h"
 
 @interface CampfireRoomsListViewController ()
 {
@@ -30,8 +31,13 @@
 
 - (void)viewDidLoad
 {
+    NSLog(@"view did load");
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    FiresideSession* session = [FiresideSession savedSession];
+    if (session.lastRoom) {
+        [self performSegueWithIdentifier:@"ShowRoom" sender:session.lastRoom];
+    }
     
     [self loadRooms];
 }
@@ -40,14 +46,6 @@
     [CampfireRoomAPI getRoomsSuccess:^(NSArray *rooms) {
         roomList = rooms;
         [self.roomsTableView reloadData];
-        
-//        CampfireRoom* room = [roomList objectAtIndex:0];
-//        [CampfireRoomAPI getRoomWithId:room.id success:^(CampfireRoom *room) {
-//            NSLog(@"room!");
-//        } failure:^(NSError *error) {
-//            NSLog(@"room details: %@", error);
-//        }];
-        
     } failure:^(NSError *error) {
         NSLog(@"error getting room list: %@", error);
     }];
@@ -89,7 +87,11 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     CampfireRoom* campfireRoom = [roomList objectAtIndex:indexPath.row];
-
+    
+    FiresideSession* session = [FiresideSession savedSession];
+    session.lastRoom = campfireRoom;
+    [session saveSession];
+    
     [CampfireRoomAPI joinRoom:campfireRoom success:^{
         [self performSegueWithIdentifier:@"ShowRoom" sender:campfireRoom];
     } failure:^(NSError *error) {

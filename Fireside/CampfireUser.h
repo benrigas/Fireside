@@ -30,5 +30,4 @@
 @property (nonatomic, strong) NSString* type;
 @property (nonatomic, strong) NSString* avatarUrl;
 
-
 @end

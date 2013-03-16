@@ -34,6 +34,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = @"Accounts";
+    
+    FiresideSession* session = [FiresideSession savedSession];
+    if (session.currentLaunchPadAccount) {
+        [self setupCampfireAPIClient:session];
+        [self performSegueWithIdentifier:@"ShowRoomList" sender:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,7 +50,8 @@
 
 - (void) loadListOfCampfireAccounts {
     @synchronized(campfireAccounts) {
-        for (LaunchPadAccount* account in [[[FiresideSession sharedInstance] launchPadAuthorization] accounts]) {
+        FiresideSession* session = [FiresideSession savedSession];
+        for (LaunchPadAccount* account in [[session launchPadAuthorization] accounts]) {
             NSLog(@"account product = %@", account.product);
             if ([account.product isEqualToString:@"campfire"]) {
                 [campfireAccounts addObject:account];
@@ -81,15 +88,24 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     LaunchPadAccount* account = [campfireAccounts objectAtIndex:indexPath.row];
-    [[FiresideSession sharedInstance] setCurrentLaunchPadAccount:account];
+    FiresideSession* session = [FiresideSession savedSession];
+    [session setCurrentLaunchPadAccount:account];
+    [session setLastRoom:nil];
+    [session saveSession];
+
+    [self setupCampfireAPIClient:session];
+
+    [self performSegueWithIdentifier:@"ShowRoomList" sender:self];
+}
+
+- (void) setupCampfireAPIClient:(FiresideSession*)session {
     
-    NSURL* accountUrl = [NSURL URLWithString:account.href];
+    NSURL* accountUrl = [NSURL URLWithString:session.currentLaunchPadAccount.href];
 #warning Refactor this
     [[CampfireAPIClient sharedInstance] initWithBaseURL:accountUrl];
-    NSString* accountToken = [[[FiresideSession sharedInstance] oAuthAuthorization] accessToken];
+    NSString* accountToken = [[session oAuthAuthorization] accessToken];
     [[CampfireAPIClient sharedInstance] setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"BEARER %@", accountToken]];
     
-    [self performSegueWithIdentifier:@"ShowRoomList" sender:self];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

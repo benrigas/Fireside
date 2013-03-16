@@ -107,7 +107,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="V0i-ZI-lMc">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="446"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -155,7 +155,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dBO-Ec-bgf"/>
                     <connections>
-                        <segue destination="rVe-Ak-gk7" kind="modal" identifier="ShowAccountsList" id="9Qh-cm-3Y7"/>
+                        <segue destination="rVe-Ak-gk7" kind="modal" identifier="ShowAccountsList" animates="NO" id="9Qh-cm-3Y7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sqY-ZJ-4og" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -51,10 +51,9 @@
             [params setObject:sinceMessageId forKey:@"since_message_id"];
         }
     }
-    
     [[CampfireAPIClient sharedInstance] getPath:urlPath parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
-            NSLog(@"recent messages\n%@", responseObject);
+            //NSLog(@"recent messages\n%@", responseObject);
             NSMutableArray* recentMessages = [[NSMutableArray alloc] init];
             for (NSDictionary* attributes in [responseObject objectForKey:@"messages"]) {
                 CampfireMessage* message = [[CampfireMessage alloc] initWithAttributes:attributes];

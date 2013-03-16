@@ -26,4 +26,36 @@
     return self;
 }
 
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.id forKey:@"id"];
+    [encoder encodeObject:self.name forKey:@"name"];
+    [encoder encodeObject:self.topic forKey:@"topic"];
+    [encoder encodeObject:self.membershipLimit forKey:@"membershipLimit"];
+    [encoder encodeObject:self.full forKey:@"full"];
+    [encoder encodeObject:self.openToGuests forKey:@"openToGuests"];
+    [encoder encodeObject:self.activeTokenValue forKey:@"activeTokenValue"];
+    [encoder encodeObject:self.updatedAt forKey:@"updatedAt"];
+    [encoder encodeObject:self.createdAt forKey:@"createdAt"];
+    [encoder encodeObject:self.users forKey:@"users"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    self = [super init];
+    if (self) {
+        self.id = [decoder decodeObjectForKey:@"id"];
+        self.name = [decoder decodeObjectForKey:@"name"];
+        self.topic = [decoder decodeObjectForKey:@"topic"];
+        self.membershipLimit = [decoder decodeObjectForKey:@"membershipLimit"];
+        self.full = [decoder decodeObjectForKey:@"full"];
+        self.openToGuests = [decoder decodeObjectForKey:@"openToGuests"];
+        self.activeTokenValue = [decoder decodeObjectForKey:@"activeTokenValue"];
+        self.updatedAt = [decoder decodeObjectForKey:@"updatedAt"];
+        self.createdAt = [decoder decodeObjectForKey:@"createdAt"];
+        self.users = [decoder decodeObjectForKey:@"users"];
+    }
+    return self;
+}
+
 @end

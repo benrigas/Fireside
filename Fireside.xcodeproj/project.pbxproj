@@ -85,6 +85,16 @@
 		21D3499B16EBB87400C38B54 /* LaunchPadIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3499916EBB87400C38B54 /* LaunchPadIdentity.m */; };
 		21D480D216ECC3D8005E1D22 /* CampfireMessageAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D480D116ECC3D8005E1D22 /* CampfireMessageAPI.m */; };
 		21D480D316ECC3D8005E1D22 /* CampfireMessageAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D480D116ECC3D8005E1D22 /* CampfireMessageAPI.m */; };
+		21F9308616F4B1220091C1DB /* REMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9307F16F4B1220091C1DB /* REMenu.m */; };
+		21F9308716F4B1220091C1DB /* REMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9307F16F4B1220091C1DB /* REMenu.m */; };
+		21F9308816F4B1220091C1DB /* REMenuContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9308116F4B1220091C1DB /* REMenuContainerView.m */; };
+		21F9308916F4B1220091C1DB /* REMenuContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9308116F4B1220091C1DB /* REMenuContainerView.m */; };
+		21F9308A16F4B1220091C1DB /* REMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9308316F4B1220091C1DB /* REMenuItem.m */; };
+		21F9308B16F4B1220091C1DB /* REMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9308316F4B1220091C1DB /* REMenuItem.m */; };
+		21F9308C16F4B1220091C1DB /* REMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9308516F4B1220091C1DB /* REMenuItemView.m */; };
+		21F9308D16F4B1220091C1DB /* REMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9308516F4B1220091C1DB /* REMenuItemView.m */; };
+		21F9309116F4B7150091C1DB /* DAKeyboardControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9309016F4B7150091C1DB /* DAKeyboardControl.m */; };
+		21F9309216F4B7150091C1DB /* DAKeyboardControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9309016F4B7150091C1DB /* DAKeyboardControl.m */; };
 		21FACB2916EBE76B000E7A7B /* CampfireRoomAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB2816EBE76B000E7A7B /* CampfireRoomAPI.m */; };
 		21FACB2A16EBE76B000E7A7B /* CampfireRoomAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB2816EBE76B000E7A7B /* CampfireRoomAPI.m */; };
 		21FACB2F16EBE7A9000E7A7B /* CampfireAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB2E16EBE7A9000E7A7B /* CampfireAPIClient.m */; };
@@ -190,6 +200,16 @@
 		21D3499916EBB87400C38B54 /* LaunchPadIdentity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchPadIdentity.m; sourceTree = "<group>"; };
 		21D480D016ECC3D8005E1D22 /* CampfireMessageAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireMessageAPI.h; sourceTree = "<group>"; };
 		21D480D116ECC3D8005E1D22 /* CampfireMessageAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireMessageAPI.m; sourceTree = "<group>"; };
+		21F9307E16F4B1220091C1DB /* REMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REMenu.h; sourceTree = "<group>"; };
+		21F9307F16F4B1220091C1DB /* REMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REMenu.m; sourceTree = "<group>"; };
+		21F9308016F4B1220091C1DB /* REMenuContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REMenuContainerView.h; sourceTree = "<group>"; };
+		21F9308116F4B1220091C1DB /* REMenuContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REMenuContainerView.m; sourceTree = "<group>"; };
+		21F9308216F4B1220091C1DB /* REMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REMenuItem.h; sourceTree = "<group>"; };
+		21F9308316F4B1220091C1DB /* REMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REMenuItem.m; sourceTree = "<group>"; };
+		21F9308416F4B1220091C1DB /* REMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REMenuItemView.h; sourceTree = "<group>"; };
+		21F9308516F4B1220091C1DB /* REMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REMenuItemView.m; sourceTree = "<group>"; };
+		21F9308F16F4B7150091C1DB /* DAKeyboardControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAKeyboardControl.h; sourceTree = "<group>"; };
+		21F9309016F4B7150091C1DB /* DAKeyboardControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAKeyboardControl.m; sourceTree = "<group>"; };
 		21FACB2716EBE76B000E7A7B /* CampfireRoomAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireRoomAPI.h; sourceTree = "<group>"; };
 		21FACB2816EBE76B000E7A7B /* CampfireRoomAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireRoomAPI.m; sourceTree = "<group>"; };
 		21FACB2D16EBE7A9000E7A7B /* CampfireAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireAPIClient.h; sourceTree = "<group>"; };
@@ -243,8 +263,10 @@
 			isa = PBXGroup;
 			children = (
 				21D3490016EB731D00C38B54 /* Fireside */,
+				21F9308E16F4B7150091C1DB /* DAKeyboardControl */,
 				21D3499C16EBB99E00C38B54 /* MMDataObject */,
 				21D3495516EB76C900C38B54 /* AFNetworking */,
+				21F9307D16F4B1220091C1DB /* REMenu */,
 				21D3492A16EB731D00C38B54 /* FiresideTests */,
 				21D348F916EB731D00C38B54 /* Frameworks */,
 				21D348F816EB731D00C38B54 /* Products */,
@@ -400,6 +422,30 @@
 			);
 			name = MMDataObject;
 			path = Fireside;
+			sourceTree = "<group>";
+		};
+		21F9307D16F4B1220091C1DB /* REMenu */ = {
+			isa = PBXGroup;
+			children = (
+				21F9307E16F4B1220091C1DB /* REMenu.h */,
+				21F9307F16F4B1220091C1DB /* REMenu.m */,
+				21F9308016F4B1220091C1DB /* REMenuContainerView.h */,
+				21F9308116F4B1220091C1DB /* REMenuContainerView.m */,
+				21F9308216F4B1220091C1DB /* REMenuItem.h */,
+				21F9308316F4B1220091C1DB /* REMenuItem.m */,
+				21F9308416F4B1220091C1DB /* REMenuItemView.h */,
+				21F9308516F4B1220091C1DB /* REMenuItemView.m */,
+			);
+			path = REMenu;
+			sourceTree = "<group>";
+		};
+		21F9308E16F4B7150091C1DB /* DAKeyboardControl */ = {
+			isa = PBXGroup;
+			children = (
+				21F9308F16F4B7150091C1DB /* DAKeyboardControl.h */,
+				21F9309016F4B7150091C1DB /* DAKeyboardControl.m */,
+			);
+			path = DAKeyboardControl;
 			sourceTree = "<group>";
 		};
 		21FACB2B16EBE77B000E7A7B /* LaunchPad */ = {
@@ -576,6 +622,11 @@
 				21FACB2F16EBE7A9000E7A7B /* CampfireAPIClient.m in Sources */,
 				21FACB3316EC1976000E7A7B /* CampfireRoomsListViewController.m in Sources */,
 				21D480D216ECC3D8005E1D22 /* CampfireMessageAPI.m in Sources */,
+				21F9308616F4B1220091C1DB /* REMenu.m in Sources */,
+				21F9308816F4B1220091C1DB /* REMenuContainerView.m in Sources */,
+				21F9308A16F4B1220091C1DB /* REMenuItem.m in Sources */,
+				21F9308C16F4B1220091C1DB /* REMenuItemView.m in Sources */,
+				21F9309116F4B7150091C1DB /* DAKeyboardControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +667,11 @@
 				21FACB3016EBE7A9000E7A7B /* CampfireAPIClient.m in Sources */,
 				21FACB3416EC1976000E7A7B /* CampfireRoomsListViewController.m in Sources */,
 				21D480D316ECC3D8005E1D22 /* CampfireMessageAPI.m in Sources */,
+				21F9308716F4B1220091C1DB /* REMenu.m in Sources */,
+				21F9308916F4B1220091C1DB /* REMenuContainerView.m in Sources */,
+				21F9308B16F4B1220091C1DB /* REMenuItem.m in Sources */,
+				21F9308D16F4B1220091C1DB /* REMenuItemView.m in Sources */,
+				21F9309216F4B7150091C1DB /* DAKeyboardControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

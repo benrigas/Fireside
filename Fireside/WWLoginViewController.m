@@ -34,10 +34,18 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
+    FiresideSession* session = [FiresideSession savedSession];
+    LaunchPadAuthorization* launchpadAuth = nil;
+    OAuthAuthorization* oAuth = nil;
     
-    LaunchPadAuthorization* auth = [[FiresideSession sharedInstance] launchPadAuthorization];
+    if (session) {
+        launchpadAuth = [session launchPadAuthorization];
+        oAuth = [session oAuthAuthorization];
+        [[LaunchPadAPIClient sharedInstance] setDefaultHeader:@"Authorization"
+                                                        value:[NSString stringWithFormat:@"BEARER %@", oAuth.accessToken]];
+    }
     
-    if (auth) {
+    if (launchpadAuth) {
         // we're already authenticated.. let's go!
         NSLog(@"IN!");
         
@@ -69,16 +77,21 @@
 - (void) oauth2WebViewController:(OAuth2WebViewController *)webAuth didFinishWithVerificationCode:(NSString *)verificationCode {
     if (verificationCode) {
         [LaunchPadAuthenticationAPI requestTokenWithVerificationCode:verificationCode success:^(OAuthAuthorization *authorization) {
-            FiresideSession* session = [FiresideSession sharedInstance];
+            FiresideSession* session = [FiresideSession savedSession];
+            
+            if (session == nil) {
+                session = [[FiresideSession alloc] init];
+            }
+            
             session.oAuthAuthorization = authorization;
             
             [[LaunchPadAPIClient sharedInstance] setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"BEARER %@", authorization.accessToken]];
-//            [[CampfireAPIClient sharedInstance] setDefaultHeader:@"Authorization" value:[NSString stringWithFormat:@"BEARER %@", authorization.accessToken]];
 
             [LaunchPadAuthenticationAPI requestAuthorizationSuccess:^(LaunchPadAuthorization *authorization) {
                 session.launchPadAuthorization = authorization;
                 [self dismissViewControllerAnimated:YES completion:nil];
                 
+                [session saveSession];
                 
             } failure:^(NSError *error) {
                 

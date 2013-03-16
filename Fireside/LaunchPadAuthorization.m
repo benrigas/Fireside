@@ -21,4 +21,22 @@
     return self;
 }
 
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.expiresAt forKey:@"expiresAt"];
+    [encoder encodeObject:self.identity forKey:@"identity"];
+    [encoder encodeObject:self.accounts forKey:@"accounts"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    self = [super init];
+    if (self) {
+        self.expiresAt = [decoder decodeObjectForKey:@"expiresAt"];
+        self.identity = [decoder decodeObjectForKey:@"identity"];
+        self.accounts = [decoder decodeObjectForKey:@"accounts"];
+    }
+    return self;
+}
+
 @end
