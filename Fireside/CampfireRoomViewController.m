@@ -10,6 +10,7 @@
 #import "CampfireRoomAPI.h"
 #import "CampfireMessageAPI.h"
 #import "DAKeyboardControl.h"
+#import "CampfireUser.h"
 
 @interface CampfireRoomViewController ()
 {
@@ -55,7 +56,7 @@
 }
 
 - (void) setupMenu {
-    REMenuItem *homeItem = [[REMenuItem alloc] initWithTitle:@"Lobby"
+    REMenuItem *lobbyItem = [[REMenuItem alloc] initWithTitle:@"Lobby"
                                                     subtitle:@"Return to the list of rooms"
                                                        image:nil
                                             highlightedImage:nil
@@ -63,7 +64,7 @@
                                                           [self goToLobby];
                                                       }];
     
-    REMenuItem *exploreItem = [[REMenuItem alloc] initWithTitle:@"Leave Room"
+    REMenuItem *leaveItem = [[REMenuItem alloc] initWithTitle:@"Leave Room"
                                                        subtitle:@"Leave the chat room"
                                                           image:nil
                                                highlightedImage:nil
@@ -71,23 +72,23 @@
                                                              [self leaveRoom];
                                                          }];
     
-    REMenuItem *activityItem = [[REMenuItem alloc] initWithTitle:@"Transcript"
-                                                        subtitle:@"View chat transcript history"
-                                                           image:nil
-                                                highlightedImage:nil
-                                                          action:^(REMenuItem *item) {
-                                                              NSLog(@"Item: %@", item);
-                                                          }];
+//    REMenuItem *activityItem = [[REMenuItem alloc] initWithTitle:@"Transcript"
+//                                                        subtitle:@"View chat transcript history"
+//                                                           image:nil
+//                                                highlightedImage:nil
+//                                                          action:^(REMenuItem *item) {
+//                                                              NSLog(@"Item: %@", item);
+//                                                          }];
     
-    REMenuItem *profileItem = [[REMenuItem alloc] initWithTitle:@"Lock"
-                                                        subtitle:@"Stops the transcript"
-                                                          image:nil
-                                               highlightedImage:nil
-                                                         action:^(REMenuItem *item) {
-                                                             NSLog(@"Item: %@", item);
-                                                         }];
+//    REMenuItem *profileItem = [[REMenuItem alloc] initWithTitle:@"Lock"
+//                                                        subtitle:@"Stops the transcript"
+//                                                          image:nil
+//                                               highlightedImage:nil
+//                                                         action:^(REMenuItem *item) {
+////                                                             if (self.room)
+//                                                         }];
     
-    _menu = [[REMenu alloc] initWithItems:@[homeItem, exploreItem, activityItem, profileItem]];
+    _menu = [[REMenu alloc] initWithItems:@[lobbyItem, leaveItem]];
 }
 
 - (void) tappedMenu:(id)sender {
@@ -113,7 +114,6 @@
     } failure:^(NSError *error) {
         NSLog(@"error leaving room. %@", error);
     }];
-    
 }
 
 - (void) getMessages:(NSTimer*)timer {
@@ -137,7 +137,7 @@
             }
         }
         
-        [self.roomTableView reloadData];
+        //[self.roomTableView reloadData];
 //        [self scrollToBottom];
     } failure:^(NSError *error) {
         NSLog(@"error getting recent messages: %@", error);
@@ -236,17 +236,55 @@
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"messageCell"];
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"TextMessageCell"];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"messageCell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TextMessageCell"];
     }
     
     CampfireMessage* message = [messages objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = message.body;
+//    cell.textLabel.text = message.body;
+    
+    UILabel* nameLabel = (UILabel*)[cell viewWithTag:1];
+    UILabel* textLabel = (UILabel*)[cell viewWithTag:2];
+    
+    // would be cool to automatically associate these somehow
+    CampfireUser* user = [self userForUserId:message.userId];
+    
+    if (user.name) {
+        nameLabel.text = user.name;
+    }
+    textLabel.text = message.body;
     
     return cell;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat height = 45.0;
+    
+    CampfireMessage* message = [messages objectAtIndex:indexPath.row];
+
+    CGSize size = [message.body sizeWithFont:[UIFont systemFontOfSize:17] constrainedToSize:CGSizeMake(tableView.frame.size.width, 9999)];
+    
+    height += size.height;
+    
+    NSLog(@"(%@)height is %f for %@", message.userId, height, message.body);
+    
+    return height;
+}
+
+- (CampfireUser*) userForUserId:(NSNumber*)userId {
+    CampfireUser* user = nil;
+    
+    for (CampfireUser* userInRoom in self.room.users) {
+        if ([userInRoom.id isEqualToNumber:userId]) {
+            user = userInRoom;
+            break;
+        }
+    }
+    
+    return user;
 }
 
 @end
