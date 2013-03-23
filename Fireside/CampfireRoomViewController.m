@@ -245,6 +245,8 @@
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     CampfireMessage* message = [messages objectAtIndex:indexPath.row];
+    UITableViewCell* cell = nil;
+    
     CampfireMessageCell* messageCell = [tableView dequeueReusableCellWithIdentifier:@"TextMessageCell"];
     
     if (messageCell == nil) {
@@ -252,41 +254,7 @@
     }
     
     [messageCell displayMessage:message];
-    
-    return messageCell;
-    
-    
-    
-    
-    
-    UITableViewCell* cell = nil;
-    
-    if ([message.type isEqualToString:@"TextMessage"]) {
-
-    }
-    else if ([message.type isEqualToString:@"SoundMessage"]) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"SoundMessageCell"];
-        
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SoundMessageCell"];
-        }
-        
-        UIWebView* webView = (UIWebView*)[cell viewWithTag:2];
-        //        UILabel* textLabel = (UILabel*)[cell viewWithTag:2];
-        //        textLabel.text = message.description;
-        webView.scrollView.alwaysBounceHorizontal = NO;
-        webView.scrollView.alwaysBounceVertical = NO;
-        [webView loadHTMLString:message.description baseURL:nil];
-    }
-    
-    UILabel* nameLabel = (UILabel*)[cell viewWithTag:1];
-    
-    // would be cool to automatically associate these somehow
-    [[CampfireUserAPI sharedInstance] getUserWithId:message.userId success:^(CampfireUser *user) {
-        nameLabel.text = user.name;
-    } failure:^(NSError *error) {
-        NSLog(@"error getting user name");
-    }];
+    cell = messageCell;
     
     return cell;
 }
@@ -295,6 +263,7 @@
     CGFloat height = 45.0;
     
     CampfireMessage* message = [messages objectAtIndex:indexPath.row];
+    
     height = [CampfireMessageCell heightForMessage:message];
     
     return height;

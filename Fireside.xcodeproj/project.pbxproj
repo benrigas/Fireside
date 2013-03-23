@@ -35,6 +35,7 @@
 		21B71C5916FE2C7A0099F2A8 /* OLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B71C5416FE2C7A0099F2A8 /* OLImageView.m */; };
 		21B71C5A16FE2C7A0099F2A8 /* OLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B71C5416FE2C7A0099F2A8 /* OLImageView.m */; };
 		21B71C5C16FE2D170099F2A8 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B71C5B16FE2D170099F2A8 /* ImageIO.framework */; };
+		21B71C6216FE4B170099F2A8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B71C6116FE4B170099F2A8 /* AVFoundation.framework */; };
 		21D348FB16EB731D00C38B54 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D348FA16EB731D00C38B54 /* UIKit.framework */; };
 		21D348FD16EB731D00C38B54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D348FC16EB731D00C38B54 /* Foundation.framework */; };
 		21D348FF16EB731D00C38B54 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D348FE16EB731D00C38B54 /* CoreGraphics.framework */; };
@@ -153,6 +154,7 @@
 		21B71C5316FE2C7A0099F2A8 /* OLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLImageView.h; sourceTree = "<group>"; };
 		21B71C5416FE2C7A0099F2A8 /* OLImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLImageView.m; sourceTree = "<group>"; };
 		21B71C5B16FE2D170099F2A8 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		21B71C6116FE4B170099F2A8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		21D348F716EB731D00C38B54 /* Fireside.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fireside.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D348FA16EB731D00C38B54 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21D348FC16EB731D00C38B54 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -244,6 +246,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B71C6216FE4B170099F2A8 /* AVFoundation.framework in Frameworks */,
 				21B71C5C16FE2D170099F2A8 /* ImageIO.framework in Frameworks */,
 				21D3498F16EBB14400C38B54 /* SystemConfiguration.framework in Frameworks */,
 				21D3498D16EBB13D00C38B54 /* MobileCoreServices.framework in Frameworks */,
@@ -339,6 +342,7 @@
 		21D348F916EB731D00C38B54 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				21B71C6116FE4B170099F2A8 /* AVFoundation.framework */,
 				21B71C5B16FE2D170099F2A8 /* ImageIO.framework */,
 				21D3498E16EBB14400C38B54 /* SystemConfiguration.framework */,
 				21D3498C16EBB13D00C38B54 /* MobileCoreServices.framework */,

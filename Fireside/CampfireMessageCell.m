@@ -10,8 +10,28 @@
 #import "UIImageView+AFNetworking.h"
 #import "CampfireUserAPI.h"
 #import "OLImageView.h"
+#import <AVFoundation/AVFoundation.h>
 
 @implementation CampfireMessageCell
+{
+    AVAudioPlayer* player;
+}
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        // Initialization code
+    }
+    return self;
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    [super setSelected:selected animated:animated];
+    
+    // Configure the view for the selected state
+}
 
 - (void) prepareForReuse {
     // remove any image views
@@ -28,28 +48,32 @@
 
 - (void) displayMessage:(CampfireMessage *)message {
     UILabel* textLabel = (UILabel*)[self viewWithTag:2];
-    BOOL onlyLink = [CampfireMessageCell messageContainsOnlyImageLink:message.body];
+    BOOL onlyLink = NO;
+    NSString* messageText = nil;
+    
+    if ([message.type isEqualToString:@"SoundMessage"]) {
+        messageText = message.description;
+        onlyLink = [CampfireMessageCell messageContainsOnlyImageLink:message.description];
+        [self playSoundForURL:message.url];
+    }
+    else {
+        messageText = message.body;
+        onlyLink = [CampfireMessageCell messageContainsOnlyImageLink:message.body];
+    }
     
     if (onlyLink) {
-//        UIImageView* imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, 320, 100)];
-//        imageView.tag = 3;
-//        [self.contentView addSubview:imageView];
-////        imageView.backgroundColor = [UIColor yellowColor];
-//        imageView.contentMode = UIViewContentModeScaleAspectFit;
-//        [imageView setImageWithURL:[NSURL URLWithString:message.body]];
-        
         OLImageView* imageView = [[OLImageView alloc] initWithFrame:CGRectMake(0, 40, 320, 100)];
         imageView.tag = 3;
         [self.contentView addSubview:imageView];
-        //        imageView.backgroundColor = [UIColor yellowColor];
+//        imageView.backgroundColor = [UIColor yellowColor];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
-        [imageView setImageWithURL:[NSURL URLWithString:message.body]];
+        [imageView setImageWithURL:[NSURL URLWithString:messageText]];
         
         //UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedImage:)];
         //[imageView addGestureRecognizer:tap];
     }
     else {
-        textLabel.text = message.body;
+        textLabel.text = messageText;
     }
     
     UILabel* nameLabel = (UILabel*)[self viewWithTag:1];
@@ -59,6 +83,27 @@
     } failure:^(NSError *error) {
         NSLog(@"error getting user name");
     }];
+}
+
+- (void) playSoundForURL:(NSString*)urlString
+{
+    NSLog(@"play url: %@", urlString);
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSData *soundData = [NSData dataWithContentsOfURL:url];
+    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                               NSUserDomainMask, YES) objectAtIndex:0]
+                          stringByAppendingPathComponent:url.lastPathComponent];
+    [soundData writeToFile:filePath atomically:YES];
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL
+                                                           fileURLWithPath:filePath] error:NULL];  
+    
+    NSLog(@"data length %d", soundData.length);
+//    NSURL *toneURLRef = [NSURL URLWithString:url];
+//    player = [[AVAudioPlayer alloc] initWithContentsOfURL:toneURLRef error: nil];
+    player.currentTime = 0;
+    player.volume = 1.0f;
+//    NSLog(@"about to play %@", toneURLRef);
+    [player play];
 }
 
 - (void) tappedImage:(UIGestureRecognizer*)tapGesture {
@@ -75,25 +120,26 @@
 + (BOOL) messageContainsOnlyImageLink:(NSString*)message {
     BOOL onlyContainsLink = NO;
     
-    NSError *error = NULL;
-    NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeLink|NSTextCheckingTypePhoneNumber error:&error];
-    
-    NSArray* matches = [detector matchesInString:message options:NSMatchingAnchored|NSMatchingHitEnd range:NSMakeRange(0, message.length)];
-    
-    if ([matches count] > 0) {
-        NSTextCheckingResult* result = [matches objectAtIndex:0];
-        if (result.range.length == message.length) {
-            onlyContainsLink = YES;
+    if (message) {
+        NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeLink error:nil];
+        
+        NSArray* matches = [detector matchesInString:message options:NSMatchingAnchored|NSMatchingHitEnd range:NSMakeRange(0, message.length)];
+        
+        if ([matches count] > 0) {
+            NSTextCheckingResult* result = [matches objectAtIndex:0];
+            if (result.range.length == message.length) {
+                onlyContainsLink = YES;
+                NSLog(@"ONLY LINK: %@", message);
+            }
         }
     }
-    
     return onlyContainsLink;
 }
 
 + (CGFloat) heightForMessage:(CampfireMessage*)message {
     CGFloat height = 44;
     
-    if ([self messageContainsOnlyImageLink:message.body]) {
+    if ([self messageContainsOnlyImageLink:message.body] || [self messageContainsOnlyImageLink:message.description]) {
         height = 140;
     }
     else {
