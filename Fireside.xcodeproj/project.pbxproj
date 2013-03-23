@@ -27,6 +27,14 @@
 		216C6DB916EBE36F00575E6A /* CampfireSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DB716EBE36F00575E6A /* CampfireSearch.m */; };
 		216C6DC016EBE46700575E6A /* CampfireRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DBF16EBE46700575E6A /* CampfireRoomViewController.m */; };
 		216C6DC116EBE46700575E6A /* CampfireRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6DBF16EBE46700575E6A /* CampfireRoomViewController.m */; };
+		21B71C4C16FCEF6D0099F2A8 /* CampfireMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B71C4B16FCEF6D0099F2A8 /* CampfireMessageCell.m */; };
+		21B71C5516FE2C7A0099F2A8 /* AFImageRequestOperation+OLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B71C5016FE2C7A0099F2A8 /* AFImageRequestOperation+OLImage.m */; };
+		21B71C5616FE2C7A0099F2A8 /* AFImageRequestOperation+OLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B71C5016FE2C7A0099F2A8 /* AFImageRequestOperation+OLImage.m */; };
+		21B71C5716FE2C7A0099F2A8 /* OLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B71C5216FE2C7A0099F2A8 /* OLImage.m */; };
+		21B71C5816FE2C7A0099F2A8 /* OLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B71C5216FE2C7A0099F2A8 /* OLImage.m */; };
+		21B71C5916FE2C7A0099F2A8 /* OLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B71C5416FE2C7A0099F2A8 /* OLImageView.m */; };
+		21B71C5A16FE2C7A0099F2A8 /* OLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B71C5416FE2C7A0099F2A8 /* OLImageView.m */; };
+		21B71C5C16FE2D170099F2A8 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21B71C5B16FE2D170099F2A8 /* ImageIO.framework */; };
 		21D348FB16EB731D00C38B54 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D348FA16EB731D00C38B54 /* UIKit.framework */; };
 		21D348FD16EB731D00C38B54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D348FC16EB731D00C38B54 /* Foundation.framework */; };
 		21D348FF16EB731D00C38B54 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D348FE16EB731D00C38B54 /* CoreGraphics.framework */; };
@@ -95,6 +103,8 @@
 		21F9308D16F4B1220091C1DB /* REMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9308516F4B1220091C1DB /* REMenuItemView.m */; };
 		21F9309116F4B7150091C1DB /* DAKeyboardControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9309016F4B7150091C1DB /* DAKeyboardControl.m */; };
 		21F9309216F4B7150091C1DB /* DAKeyboardControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9309016F4B7150091C1DB /* DAKeyboardControl.m */; };
+		21F930D716FB78230091C1DB /* CampfireUserAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F930D616FB78230091C1DB /* CampfireUserAPI.m */; };
+		21F930D816FB78230091C1DB /* CampfireUserAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F930D616FB78230091C1DB /* CampfireUserAPI.m */; };
 		21FACB2916EBE76B000E7A7B /* CampfireRoomAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB2816EBE76B000E7A7B /* CampfireRoomAPI.m */; };
 		21FACB2A16EBE76B000E7A7B /* CampfireRoomAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB2816EBE76B000E7A7B /* CampfireRoomAPI.m */; };
 		21FACB2F16EBE7A9000E7A7B /* CampfireAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB2E16EBE7A9000E7A7B /* CampfireAPIClient.m */; };
@@ -134,6 +144,15 @@
 		216C6DB716EBE36F00575E6A /* CampfireSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireSearch.m; sourceTree = "<group>"; };
 		216C6DBE16EBE46700575E6A /* CampfireRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireRoomViewController.h; sourceTree = "<group>"; };
 		216C6DBF16EBE46700575E6A /* CampfireRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireRoomViewController.m; sourceTree = "<group>"; };
+		21B71C4A16FCEF6D0099F2A8 /* CampfireMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireMessageCell.h; sourceTree = "<group>"; };
+		21B71C4B16FCEF6D0099F2A8 /* CampfireMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireMessageCell.m; sourceTree = "<group>"; };
+		21B71C4F16FE2C7A0099F2A8 /* AFImageRequestOperation+OLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFImageRequestOperation+OLImage.h"; sourceTree = "<group>"; };
+		21B71C5016FE2C7A0099F2A8 /* AFImageRequestOperation+OLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFImageRequestOperation+OLImage.m"; sourceTree = "<group>"; };
+		21B71C5116FE2C7A0099F2A8 /* OLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLImage.h; sourceTree = "<group>"; };
+		21B71C5216FE2C7A0099F2A8 /* OLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLImage.m; sourceTree = "<group>"; };
+		21B71C5316FE2C7A0099F2A8 /* OLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLImageView.h; sourceTree = "<group>"; };
+		21B71C5416FE2C7A0099F2A8 /* OLImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLImageView.m; sourceTree = "<group>"; };
+		21B71C5B16FE2D170099F2A8 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		21D348F716EB731D00C38B54 /* Fireside.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fireside.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D348FA16EB731D00C38B54 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		21D348FC16EB731D00C38B54 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -210,6 +229,8 @@
 		21F9308516F4B1220091C1DB /* REMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REMenuItemView.m; sourceTree = "<group>"; };
 		21F9308F16F4B7150091C1DB /* DAKeyboardControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAKeyboardControl.h; sourceTree = "<group>"; };
 		21F9309016F4B7150091C1DB /* DAKeyboardControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAKeyboardControl.m; sourceTree = "<group>"; };
+		21F930D516FB78230091C1DB /* CampfireUserAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireUserAPI.h; sourceTree = "<group>"; };
+		21F930D616FB78230091C1DB /* CampfireUserAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireUserAPI.m; sourceTree = "<group>"; };
 		21FACB2716EBE76B000E7A7B /* CampfireRoomAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireRoomAPI.h; sourceTree = "<group>"; };
 		21FACB2816EBE76B000E7A7B /* CampfireRoomAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireRoomAPI.m; sourceTree = "<group>"; };
 		21FACB2D16EBE7A9000E7A7B /* CampfireAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireAPIClient.h; sourceTree = "<group>"; };
@@ -223,6 +244,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B71C5C16FE2D170099F2A8 /* ImageIO.framework in Frameworks */,
 				21D3498F16EBB14400C38B54 /* SystemConfiguration.framework in Frameworks */,
 				21D3498D16EBB13D00C38B54 /* MobileCoreServices.framework in Frameworks */,
 				21D348FB16EB731D00C38B54 /* UIKit.framework in Frameworks */,
@@ -259,10 +281,42 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		21B71C4916FCEF510099F2A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				21B71C4A16FCEF6D0099F2A8 /* CampfireMessageCell.h */,
+				21B71C4B16FCEF6D0099F2A8 /* CampfireMessageCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		21B71C4D16FE2C620099F2A8 /* OLImageView */ = {
+			isa = PBXGroup;
+			children = (
+				21B71C4E16FE2C7A0099F2A8 /* Categories */,
+				21B71C5116FE2C7A0099F2A8 /* OLImage.h */,
+				21B71C5216FE2C7A0099F2A8 /* OLImage.m */,
+				21B71C5316FE2C7A0099F2A8 /* OLImageView.h */,
+				21B71C5416FE2C7A0099F2A8 /* OLImageView.m */,
+			);
+			name = OLImageView;
+			path = Fireside;
+			sourceTree = "<group>";
+		};
+		21B71C4E16FE2C7A0099F2A8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				21B71C4F16FE2C7A0099F2A8 /* AFImageRequestOperation+OLImage.h */,
+				21B71C5016FE2C7A0099F2A8 /* AFImageRequestOperation+OLImage.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		21D348EE16EB731D00C38B54 = {
 			isa = PBXGroup;
 			children = (
 				21D3490016EB731D00C38B54 /* Fireside */,
+				21B71C4D16FE2C620099F2A8 /* OLImageView */,
 				21F9308E16F4B7150091C1DB /* DAKeyboardControl */,
 				21D3499C16EBB99E00C38B54 /* MMDataObject */,
 				21D3495516EB76C900C38B54 /* AFNetworking */,
@@ -285,6 +339,7 @@
 		21D348F916EB731D00C38B54 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				21B71C5B16FE2D170099F2A8 /* ImageIO.framework */,
 				21D3498E16EBB14400C38B54 /* SystemConfiguration.framework */,
 				21D3498C16EBB13D00C38B54 /* MobileCoreServices.framework */,
 				21D348FA16EB731D00C38B54 /* UIKit.framework */,
@@ -298,6 +353,7 @@
 		21D3490016EB731D00C38B54 /* Fireside */ = {
 			isa = PBXGroup;
 			children = (
+				21B71C4916FCEF510099F2A8 /* Views */,
 				216C6D9D16EBDF2B00575E6A /* View Controllers */,
 				21D3495016EB763B00C38B54 /* API Client */,
 				21D3494416EB747000C38B54 /* Model */,
@@ -470,6 +526,8 @@
 				21FACB2E16EBE7A9000E7A7B /* CampfireAPIClient.m */,
 				21D480D016ECC3D8005E1D22 /* CampfireMessageAPI.h */,
 				21D480D116ECC3D8005E1D22 /* CampfireMessageAPI.m */,
+				21F930D516FB78230091C1DB /* CampfireUserAPI.h */,
+				21F930D616FB78230091C1DB /* CampfireUserAPI.m */,
 			);
 			name = Campfire;
 			sourceTree = "<group>";
@@ -627,6 +685,11 @@
 				21F9308A16F4B1220091C1DB /* REMenuItem.m in Sources */,
 				21F9308C16F4B1220091C1DB /* REMenuItemView.m in Sources */,
 				21F9309116F4B7150091C1DB /* DAKeyboardControl.m in Sources */,
+				21F930D716FB78230091C1DB /* CampfireUserAPI.m in Sources */,
+				21B71C4C16FCEF6D0099F2A8 /* CampfireMessageCell.m in Sources */,
+				21B71C5516FE2C7A0099F2A8 /* AFImageRequestOperation+OLImage.m in Sources */,
+				21B71C5716FE2C7A0099F2A8 /* OLImage.m in Sources */,
+				21B71C5916FE2C7A0099F2A8 /* OLImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +735,10 @@
 				21F9308B16F4B1220091C1DB /* REMenuItem.m in Sources */,
 				21F9308D16F4B1220091C1DB /* REMenuItemView.m in Sources */,
 				21F9309216F4B7150091C1DB /* DAKeyboardControl.m in Sources */,
+				21F930D816FB78230091C1DB /* CampfireUserAPI.m in Sources */,
+				21B71C5616FE2C7A0099F2A8 /* AFImageRequestOperation+OLImage.m in Sources */,
+				21B71C5816FE2C7A0099F2A8 /* OLImage.m in Sources */,
+				21B71C5A16FE2C7A0099F2A8 /* OLImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

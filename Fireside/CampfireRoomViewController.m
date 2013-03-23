@@ -9,8 +9,10 @@
 #import "CampfireRoomViewController.h"
 #import "CampfireRoomAPI.h"
 #import "CampfireMessageAPI.h"
+#import "CampfireUserAPI.h"
 #import "DAKeyboardControl.h"
 #import "CampfireUser.h"
+#import "CampfireMessageCell.h"
 
 @interface CampfireRoomViewController ()
 {
@@ -41,7 +43,7 @@
 	// Do any additional setup after loading the view.
     self.title = self.room.name;
     [self setupInputView];
-
+    
     [self loadRecentMessages];
     
     getMessagesTimer = [NSTimer timerWithTimeInterval:4.0 target:self selector:@selector(getMessages:) userInfo:nil repeats:YES];
@@ -57,36 +59,36 @@
 
 - (void) setupMenu {
     REMenuItem *lobbyItem = [[REMenuItem alloc] initWithTitle:@"Lobby"
-                                                    subtitle:@"Return to the list of rooms"
-                                                       image:nil
-                                            highlightedImage:nil
-                                                      action:^(REMenuItem *item) {
-                                                          [self goToLobby];
-                                                      }];
+                                                     subtitle:@"Return to the list of rooms"
+                                                        image:nil
+                                             highlightedImage:nil
+                                                       action:^(REMenuItem *item) {
+                                                           [self goToLobby];
+                                                       }];
     
     REMenuItem *leaveItem = [[REMenuItem alloc] initWithTitle:@"Leave Room"
-                                                       subtitle:@"Leave the chat room"
-                                                          image:nil
-                                               highlightedImage:nil
-                                                         action:^(REMenuItem *item) {
-                                                             [self leaveRoom];
-                                                         }];
+                                                     subtitle:@"Leave the chat room"
+                                                        image:nil
+                                             highlightedImage:nil
+                                                       action:^(REMenuItem *item) {
+                                                           [self leaveRoom];
+                                                       }];
     
-//    REMenuItem *activityItem = [[REMenuItem alloc] initWithTitle:@"Transcript"
-//                                                        subtitle:@"View chat transcript history"
-//                                                           image:nil
-//                                                highlightedImage:nil
-//                                                          action:^(REMenuItem *item) {
-//                                                              NSLog(@"Item: %@", item);
-//                                                          }];
+    //    REMenuItem *activityItem = [[REMenuItem alloc] initWithTitle:@"Transcript"
+    //                                                        subtitle:@"View chat transcript history"
+    //                                                           image:nil
+    //                                                highlightedImage:nil
+    //                                                          action:^(REMenuItem *item) {
+    //                                                              NSLog(@"Item: %@", item);
+    //                                                          }];
     
-//    REMenuItem *profileItem = [[REMenuItem alloc] initWithTitle:@"Lock"
-//                                                        subtitle:@"Stops the transcript"
-//                                                          image:nil
-//                                               highlightedImage:nil
-//                                                         action:^(REMenuItem *item) {
-////                                                             if (self.room)
-//                                                         }];
+    //    REMenuItem *profileItem = [[REMenuItem alloc] initWithTitle:@"Lock"
+    //                                                        subtitle:@"Stops the transcript"
+    //                                                          image:nil
+    //                                               highlightedImage:nil
+    //                                                         action:^(REMenuItem *item) {
+    ////                                                             if (self.room)
+    //                                                         }];
     
     _menu = [[REMenu alloc] initWithItems:@[lobbyItem, leaveItem]];
 }
@@ -102,7 +104,7 @@
 }
 
 - (void) goToLobby {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 - (void) leaveRoom {
@@ -135,10 +137,16 @@
             if ([message.type isEqualToString:@"TextMessage"]) {
                 [self addNewMessage:message];
             }
+            else if ([message.type isEqualToString:@"SoundMessage"]) {
+                [self addNewMessage:message];
+            }
+            else if ([message.type isEqualToString:@"PasteMessage"]) {
+                [self addNewMessage:message];
+            }
         }
         
         //[self.roomTableView reloadData];
-//        [self scrollToBottom];
+        //[self scrollToBottom];
     } failure:^(NSError *error) {
         NSLog(@"error getting recent messages: %@", error);
     }];
@@ -152,8 +160,7 @@
     [self.roomTableView insertRowsAtIndexPaths:@[newRowIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self.roomTableView endUpdates];
     
-    [self scrollToBottom]; // FIXME only scroll to bottom if already at the bottom
-
+    //[self scrollToBottom]; // FIXME only scroll to bottom if already at the bottom
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -162,8 +169,8 @@
 }
 
 - (void) scrollToBottom {
-    NSIndexPath* ipath = [NSIndexPath indexPathForRow:messages.count-1 inSection:0];
-    [self.roomTableView scrollToRowAtIndexPath: ipath atScrollPosition: UITableViewScrollPositionTop animated: YES];
+    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:messages.count-1 inSection:0];
+    [self.roomTableView scrollToRowAtIndexPath:indexPath atScrollPosition: UITableViewScrollPositionTop animated:NO];
 }
 
 - (void) setupInputView {
@@ -174,11 +181,11 @@
     inputTextField = [[UITextField alloc] initWithFrame:viewFrame];
     inputTextField.backgroundColor = [UIColor whiteColor];
     inputTextField.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
-//    inputTextField.keyboardAppearance = UIKeyboardAppearanceAlert;
+    //    inputTextField.keyboardAppearance = UIKeyboardAppearanceAlert;
     inputTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     
     UIBarButtonItem* barText = [[UIBarButtonItem alloc] initWithCustomView:inputTextField];
-
+    
     UIBarButtonItem* sendButton = [[UIBarButtonItem alloc] initWithTitle:@"send" style:UIBarButtonItemStyleBordered target:self action:@selector(tappedSendButton:)];
     toolbar.items = @[barText, sendButton];
     
@@ -202,10 +209,10 @@
 }
 
 - (void) tappedSendButton:(id)sender {
-    [self sendMessage];
+    [self sendTextMessage];
 }
 
-- (void) sendMessage {
+- (void) sendTextMessage {
     CampfireMessage* message = [[CampfireMessage alloc] init];
     message.type = @"TextMessage";
     message.body = inputTextField.text;
@@ -236,26 +243,50 @@
 }
 
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"TextMessageCell"];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TextMessageCell"];
-    }
     
     CampfireMessage* message = [messages objectAtIndex:indexPath.row];
+    CampfireMessageCell* messageCell = [tableView dequeueReusableCellWithIdentifier:@"TextMessageCell"];
     
-//    cell.textLabel.text = message.body;
+    if (messageCell == nil) {
+        messageCell = [[CampfireMessageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TextMessageCell"];
+    }
+    
+    [messageCell displayMessage:message];
+    
+    return messageCell;
+    
+    
+    
+    
+    
+    UITableViewCell* cell = nil;
+    
+    if ([message.type isEqualToString:@"TextMessage"]) {
+
+    }
+    else if ([message.type isEqualToString:@"SoundMessage"]) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"SoundMessageCell"];
+        
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SoundMessageCell"];
+        }
+        
+        UIWebView* webView = (UIWebView*)[cell viewWithTag:2];
+        //        UILabel* textLabel = (UILabel*)[cell viewWithTag:2];
+        //        textLabel.text = message.description;
+        webView.scrollView.alwaysBounceHorizontal = NO;
+        webView.scrollView.alwaysBounceVertical = NO;
+        [webView loadHTMLString:message.description baseURL:nil];
+    }
     
     UILabel* nameLabel = (UILabel*)[cell viewWithTag:1];
-    UILabel* textLabel = (UILabel*)[cell viewWithTag:2];
     
     // would be cool to automatically associate these somehow
-    CampfireUser* user = [self userForUserId:message.userId];
-    
-    if (user.name) {
+    [[CampfireUserAPI sharedInstance] getUserWithId:message.userId success:^(CampfireUser *user) {
         nameLabel.text = user.name;
-    }
-    textLabel.text = message.body;
+    } failure:^(NSError *error) {
+        NSLog(@"error getting user name");
+    }];
     
     return cell;
 }
@@ -264,27 +295,9 @@
     CGFloat height = 45.0;
     
     CampfireMessage* message = [messages objectAtIndex:indexPath.row];
-
-    CGSize size = [message.body sizeWithFont:[UIFont systemFontOfSize:17] constrainedToSize:CGSizeMake(tableView.frame.size.width, 9999)];
-    
-    height += size.height;
-    
-    NSLog(@"(%@)height is %f for %@", message.userId, height, message.body);
+    height = [CampfireMessageCell heightForMessage:message];
     
     return height;
-}
-
-- (CampfireUser*) userForUserId:(NSNumber*)userId {
-    CampfireUser* user = nil;
-    
-    for (CampfireUser* userInRoom in self.room.users) {
-        if ([userInRoom.id isEqualToNumber:userId]) {
-            user = userInRoom;
-            break;
-        }
-    }
-    
-    return user;
 }
 
 @end

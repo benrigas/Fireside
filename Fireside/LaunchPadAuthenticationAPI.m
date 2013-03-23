@@ -80,4 +80,37 @@
     }];
 }
 
++ (void) requestTokenWithRefreshToken:(NSString*)refreshToken
+                              success:(void (^)(OAuthAuthorization* authorization))success
+                              failure:(void (^)(NSError* error))failure {
+    //type=refresh&client_id={0}&redirect_uri={1}&client_secret={2}&refresh_token={3}
+    NSString* urlString = [NSString stringWithFormat:@"authorization/token"];
+    NSDictionary* parameters = @{@"type": @"refresh",
+                                 @"client_id": kClientID,
+                                 @"redirect_uri": kRedirectURL,
+                                 @"client_secret": kClientSecret,
+                                 @"refresh_token": refreshToken
+                                 };
+    
+    [[LaunchPadAPIClient sharedInstance] postPath:urlString parameters:parameters
+                                          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                              NSError* error = nil;
+                                              
+                                              id json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:&error];
+                                              
+                                              if (!error) {
+                                                  OAuthAuthorization* authorization = [[OAuthAuthorization alloc] initWithAttributes:json];
+                                                                                                    
+                                                  if (success) {
+                                                      success(authorization);
+                                                  }
+                                              }
+                                              
+                                          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                              if (failure) {
+                                                  failure(error);
+                                              }
+                                          }];
+}
+
 @end

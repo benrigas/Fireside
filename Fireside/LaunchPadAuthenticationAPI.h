@@ -21,4 +21,8 @@
 + (void) requestAuthorizationSuccess:(void (^)(LaunchPadAuthorization* authorization))success
                              failure:(void (^)(NSError* error))failure;
 
++ (void) requestTokenWithRefreshToken:(NSString*)refreshToken
+                              success:(void (^)(OAuthAuthorization* authorization))success
+                              failure:(void (^)(NSError* error))failure;
+
 @end
