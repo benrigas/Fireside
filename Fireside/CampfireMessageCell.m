@@ -10,13 +10,8 @@
 #import "UIImageView+AFNetworking.h"
 #import "CampfireUserAPI.h"
 #import "OLImageView.h"
-#import <AVFoundation/AVFoundation.h>
-#import "CampfireSoundLoader.h"
 
 @implementation CampfireMessageCell
-{
-    AVAudioPlayer* player;
-}
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -55,7 +50,7 @@
     if ([message.type isEqualToString:@"SoundMessage"]) {
         messageText = message.description;
         onlyLink = [CampfireMessageCell messageContainsOnlyImageLink:message.description];
-        [self playSoundForURL:message.url];
+        //[self playSoundForURL:message.url];
     }
     else {
         messageText = message.body;
@@ -83,21 +78,6 @@
         nameLabel.text = user.name;
     } failure:^(NSError *error) {
         NSLog(@"error getting user name");
-    }];
-}
-
-- (void) playSoundForURL:(NSString*)urlString
-{
-    [CampfireSoundLoader getSoundWithURL:urlString success:^(NSString *localSoundFilePath) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSURL* localSoundFileURL = [NSURL fileURLWithPath:localSoundFilePath];
-            player = [[AVAudioPlayer alloc] initWithContentsOfURL:localSoundFileURL error:NULL];
-            player.currentTime = 0;
-            player.volume = 1.0f;
-            [player play];
-        });
-    } failure:^(NSError *error) {
-        NSLog(@"error playing file: %@", urlString);
     }];
 }
 

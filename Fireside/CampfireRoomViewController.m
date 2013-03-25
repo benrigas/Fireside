@@ -13,6 +13,8 @@
 #import "DAKeyboardControl.h"
 #import "CampfireUser.h"
 #import "CampfireMessageCell.h"
+#import <AVFoundation/AVFoundation.h>
+#import "CampfireSoundLoader.h"
 
 @interface CampfireRoomViewController ()
 {
@@ -21,7 +23,8 @@
     NSTimer* getMessagesTimer;
     UITextField* inputTextField;
     REMenu* _menu;
-    BOOL viewIsResized;
+    AVAudioPlayer* player;
+    BOOL doingInitialLoad;
 }
 
 @end
@@ -44,6 +47,7 @@
     self.title = self.room.name;
     [self setupInputView];
     
+    doingInitialLoad = YES;
     [self loadRecentMessages];
     
     getMessagesTimer = [NSTimer timerWithTimeInterval:4.0 target:self selector:@selector(getMessages:) userInfo:nil repeats:YES];
@@ -133,22 +137,42 @@
     [CampfireMessageAPI getRecentMessagesForRoom:self.room limit:nil sinceMessageId:lastMessageId success:^(NSArray *recentMessages) {
         
         for (CampfireMessage* message in recentMessages) {
-            lastMessageId = message.id;
             if ([message.type isEqualToString:@"TextMessage"]) {
                 [self addNewMessage:message];
             }
             else if ([message.type isEqualToString:@"SoundMessage"]) {
                 [self addNewMessage:message];
+                if (doingInitialLoad == NO ) { //&& [message.id compare:lastMessageId] == NSOrderedAscending) {
+                    [self playSoundForURL:message.url];
+                }
             }
             else if ([message.type isEqualToString:@"PasteMessage"]) {
                 [self addNewMessage:message];
             }
+            lastMessageId = message.id;
         }
+        
+        doingInitialLoad = NO;
         
         //[self.roomTableView reloadData];
         //[self scrollToBottom];
     } failure:^(NSError *error) {
         NSLog(@"error getting recent messages: %@", error);
+    }];
+}
+
+- (void) playSoundForURL:(NSString*)urlString
+{
+    [CampfireSoundLoader getSoundWithURL:urlString success:^(NSString *localSoundFilePath) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSURL* localSoundFileURL = [NSURL fileURLWithPath:localSoundFilePath];
+            player = [[AVAudioPlayer alloc] initWithContentsOfURL:localSoundFileURL error:NULL];
+            player.currentTime = 0;
+            player.volume = 1.0f;
+            [player play];
+        });
+    } failure:^(NSError *error) {
+        NSLog(@"error playing file: %@", urlString);
     }];
 }
 
