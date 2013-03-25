@@ -11,6 +11,7 @@
 #import "CampfireUserAPI.h"
 #import "OLImageView.h"
 #import <AVFoundation/AVFoundation.h>
+#import "CampfireSoundLoader.h"
 
 @implementation CampfireMessageCell
 {
@@ -69,8 +70,8 @@
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         [imageView setImageWithURL:[NSURL URLWithString:messageText]];
         
-        //UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedImage:)];
-        //[imageView addGestureRecognizer:tap];
+        UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedImage:)];
+        [imageView addGestureRecognizer:tap];
     }
     else {
         textLabel.text = messageText;
@@ -87,23 +88,17 @@
 
 - (void) playSoundForURL:(NSString*)urlString
 {
-    NSLog(@"play url: %@", urlString);
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSData *soundData = [NSData dataWithContentsOfURL:url];
-    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-                                                               NSUserDomainMask, YES) objectAtIndex:0]
-                          stringByAppendingPathComponent:url.lastPathComponent];
-    [soundData writeToFile:filePath atomically:YES];
-    player = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL
-                                                           fileURLWithPath:filePath] error:NULL];  
-    
-    NSLog(@"data length %d", soundData.length);
-//    NSURL *toneURLRef = [NSURL URLWithString:url];
-//    player = [[AVAudioPlayer alloc] initWithContentsOfURL:toneURLRef error: nil];
-    player.currentTime = 0;
-    player.volume = 1.0f;
-//    NSLog(@"about to play %@", toneURLRef);
-    [player play];
+    [CampfireSoundLoader getSoundWithURL:urlString success:^(NSString *localSoundFilePath) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSURL* localSoundFileURL = [NSURL fileURLWithPath:localSoundFilePath];
+            player = [[AVAudioPlayer alloc] initWithContentsOfURL:localSoundFileURL error:NULL];
+            player.currentTime = 0;
+            player.volume = 1.0f;
+            [player play];
+        });
+    } failure:^(NSError *error) {
+        NSLog(@"error playing file: %@", urlString);
+    }];
 }
 
 - (void) tappedImage:(UIGestureRecognizer*)tapGesture {
@@ -129,7 +124,7 @@
             NSTextCheckingResult* result = [matches objectAtIndex:0];
             if (result.range.length == message.length) {
                 onlyContainsLink = YES;
-                NSLog(@"ONLY LINK: %@", message);
+                //NSLog(@"ONLY LINK: %@", message);
             }
         }
     }
