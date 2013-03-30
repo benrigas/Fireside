@@ -37,15 +37,32 @@
         [imageView removeFromSuperview];
     }
     
-    UILabel* textLabel = (UILabel*)[self viewWithTag:2];
-    textLabel.text = nil;
+//    UILabel* textLabel = (UILabel*)[self viewWithTag:2];
+//    textLabel.text = nil;
+    UIWebView* webView = (UIWebView*)[self viewWithTag:2];
+    [webView stopLoading];
+    [webView loadHTMLString:nil baseURL:nil];
 //    self.contentView.backgroundColor = [UIColor orangeColor];
 }
 
+- (NSString*) emojify:(NSString*)messageText {
+    NSString* emojifiedMessageText = nil;
+
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@":([a-z0-9\\+\\-_]+):"
+                                                                           options:0
+                                                                             error:NULL];
+    emojifiedMessageText = [regex stringByReplacingMatchesInString:messageText options:0 range:NSMakeRange(0, [messageText length]) withTemplate:@"<img src=\"$1.png\" width=22 height=22/>"];
+
+    return emojifiedMessageText;
+}
+
 - (void) displayMessage:(CampfireMessage *)message {
-    UILabel* textLabel = (UILabel*)[self viewWithTag:2];
+//    UILabel* textLabel = (UILabel*)[self viewWithTag:2];
+    UIWebView* webView = (UIWebView*)[self viewWithTag:2];
     BOOL onlyLink = NO;
     NSString* messageText = nil;
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+    NSURL *baseURL = [NSURL fileURLWithPath:path];
     
     if ([message.type isEqualToString:@"SoundMessage"]) {
         messageText = message.description;
@@ -69,7 +86,10 @@
         [imageView addGestureRecognizer:tap];
     }
     else {
-        textLabel.text = messageText;
+//        textLabel.text = messageText;
+        webView.scrollView.bounces = NO;
+        webView.scrollView.scrollEnabled = NO;
+        [webView loadHTMLString:[self emojify:messageText] baseURL:baseURL];
     }
     
     UILabel* nameLabel = (UILabel*)[self viewWithTag:1];
