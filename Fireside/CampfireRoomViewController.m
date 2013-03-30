@@ -155,7 +155,7 @@
         doingInitialLoad = NO;
         
         //[self.roomTableView reloadData];
-        //[self scrollToBottom];
+//        [self scrollToBottom];
     } failure:^(NSError *error) {
         NSLog(@"error getting recent messages: %@", error);
     }];
@@ -184,7 +184,7 @@
     [self.roomTableView insertRowsAtIndexPaths:@[newRowIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self.roomTableView endUpdates];
     
-    //[self scrollToBottom]; // FIXME only scroll to bottom if already at the bottom
+    [self scrollToBottom]; // FIXME only scroll to bottom if already at the bottom
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -198,13 +198,14 @@
 }
 
 - (void) setupInputView {
-    CGRect viewFrame = CGRectMake(0, self.view.frame.size.height-44-44, self.view.frame.size.width, 44);
+    CGRect viewFrame = CGRectMake(0, self.view.frame.size.height-44, self.view.frame.size.width, 44);
     UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:viewFrame];
+    toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin;
     toolbar.tintColor = [UIColor darkGrayColor];
     viewFrame = CGRectMake(0, 0, 240, 32);
     inputTextField = [[UITextField alloc] initWithFrame:viewFrame];
     inputTextField.backgroundColor = [UIColor whiteColor];
-    inputTextField.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
+    inputTextField.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleHeight;
     //    inputTextField.keyboardAppearance = UIKeyboardAppearanceAlert;
     inputTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     

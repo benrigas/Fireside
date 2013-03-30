@@ -87,9 +87,12 @@
     }
     else {
 //        textLabel.text = messageText;
+        webView.delegate = self;
         webView.scrollView.bounces = NO;
         webView.scrollView.scrollEnabled = NO;
-        [webView loadHTMLString:[self emojify:messageText] baseURL:baseURL];
+        NSString* webHTML = [self htmlify:[self emojify:messageText]];
+        [webView loadHTMLString:webHTML baseURL:baseURL];
+//        webView.backgroundColor = [UIColor yellowColor];
     }
     
     UILabel* nameLabel = (UILabel*)[self viewWithTag:1];
@@ -99,6 +102,24 @@
     } failure:^(NSError *error) {
         NSLog(@"error getting user name");
     }];
+}
+
+- (NSString*) htmlify:(NSString*)messageText {
+    NSMutableString* htmlified = [[NSMutableString alloc] init];
+    
+    [htmlified appendFormat:@"<html>"];
+    [htmlified appendFormat:@"<head><link rel=\'stylesheet\' id=\'message.css\' href=\'message.css\' type=\'text/css\' media=\'all\' /></head>"];
+    [htmlified appendFormat:@"<p>%@</p></html>", messageText];
+    return htmlified;
+}
+
+-(BOOL) webView:(UIWebView *)inWeb shouldStartLoadWithRequest:(NSURLRequest *)inRequest navigationType:(UIWebViewNavigationType)inType {
+    if ( inType == UIWebViewNavigationTypeLinkClicked ) {
+        [[UIApplication sharedApplication] openURL:[inRequest URL]];
+        return NO;
+    }
+    
+    return YES;
 }
 
 - (void) tappedImage:(UIGestureRecognizer*)tapGesture {

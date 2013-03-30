@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "CampfireMessage.h"
 
-@interface CampfireMessageCell : UITableViewCell
+@interface CampfireMessageCell : UITableViewCell <UIWebViewDelegate>
 
 - (void) displayMessage:(CampfireMessage*)message;
 
