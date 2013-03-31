@@ -149,6 +149,13 @@
             else if ([message.type isEqualToString:@"PasteMessage"]) {
                 [self addNewMessage:message];
             }
+            else if ([message.type isEqualToString:@"TweetMessage"]) {
+//                NSLog(@"message: %@", message.attributes);
+                [self addNewMessage:message];
+            }
+            else {
+                NSLog(@"Unhandled message type: %@", message.type);
+            }
             lastMessageId = message.id;
         }
         

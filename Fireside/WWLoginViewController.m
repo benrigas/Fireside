@@ -48,17 +48,18 @@
     // if the access token expires in less than SOME_TIME, refresh
     
     // refresh token flow
-//    [LaunchPadAuthenticationAPI requestTokenWithRefreshToken:oAuth.refreshToken success:^(OAuthAuthorization *authorization) {
-//        [session setOAuthAuthorization:authorization];
-//        authorization.refreshToken = oAuth.refreshToken; // hang on to the refresh token for later
-//        [session saveSession];
-//
-//        [[LaunchPadAPIClient sharedInstance] setDefaultHeader:@"Authorization"
-//                                                        value:[NSString stringWithFormat:@"BEARER %@", authorization.accessToken]];
-//
-//    } failure:^(NSError *error) {
-//        NSLog(@"error with refresh token");
-//    }];
+    [LaunchPadAuthenticationAPI requestTokenWithRefreshToken:oAuth.refreshToken success:^(OAuthAuthorization *authorization) {
+        [session setOAuthAuthorization:authorization];
+        authorization.refreshToken = oAuth.refreshToken; // hang on to the refresh token for later
+        [session saveSession];
+
+        [[LaunchPadAPIClient sharedInstance] setDefaultHeader:@"Authorization"
+                                                        value:[NSString stringWithFormat:@"BEARER %@", authorization.accessToken]];
+        NSLog(@"refreshed!");
+
+    } failure:^(NSError *error) {
+        NSLog(@"error with refresh token");
+    }];
     
     if (launchpadAuth) {
         // we're already authenticated.. let's go!

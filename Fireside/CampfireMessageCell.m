@@ -79,9 +79,10 @@
         imageView.tag = 3;
         [self.contentView addSubview:imageView];
 //        imageView.backgroundColor = [UIColor yellowColor];
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        imageView.clipsToBounds = YES;
         [imageView setImageWithURL:[NSURL URLWithString:messageText]];
-        
+//        [imageView sizeToFit];
         UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedImage:)];
         [imageView addGestureRecognizer:tap];
     }
@@ -153,13 +154,13 @@
 }
 
 + (CGFloat) heightForMessage:(CampfireMessage*)message {
-    CGFloat height = 44;
+    CGFloat height = 32;
     
     if ([self messageContainsOnlyImageLink:message.body] || [self messageContainsOnlyImageLink:message.description]) {
         height = 140;
     }
     else {
-        CGSize size = [message.body sizeWithFont:[UIFont systemFontOfSize:17] constrainedToSize:CGSizeMake(320, 9999)];
+        CGSize size = [message.body sizeWithFont:[UIFont systemFontOfSize:15] constrainedToSize:CGSizeMake(320, 9999)];
         height += size.height;
     }
     
