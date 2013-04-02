@@ -70,7 +70,6 @@
     if ([message.type isEqualToString:@"SoundMessage"]) {
         messageText = message.description;
         onlyLink = [CampfireMessageCell messageContainsOnlyImageLink:message.description];
-        //[self playSoundForURL:message.url];
         imageHeight = 40;
     }
     else {
