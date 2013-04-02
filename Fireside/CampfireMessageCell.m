@@ -31,10 +31,11 @@
 
 - (void) prepareForReuse {
     // remove any image views
-    
-    UIImageView* imageView = (UIImageView*)[self viewWithTag:3];
+    OLImageView* imageView = (OLImageView*)[self viewWithTag:3];
     if (imageView) {
+        [imageView stopAnimating];
         [imageView removeFromSuperview];
+        imageView = nil;
     }
     
 //    UILabel* textLabel = (UILabel*)[self viewWithTag:2];
@@ -64,10 +65,13 @@
     NSString *path = [[NSBundle mainBundle] bundlePath];
     NSURL *baseURL = [NSURL fileURLWithPath:path];
     
+    CGFloat imageHeight = 100;
+    
     if ([message.type isEqualToString:@"SoundMessage"]) {
         messageText = message.description;
         onlyLink = [CampfireMessageCell messageContainsOnlyImageLink:message.description];
         //[self playSoundForURL:message.url];
+        imageHeight = 40;
     }
     else {
         messageText = message.body;
@@ -75,16 +79,18 @@
     }
     
     if (onlyLink) {
-        OLImageView* imageView = [[OLImageView alloc] initWithFrame:CGRectMake(0, 40, 320, 100)];
-        imageView.tag = 3;
-        [self.contentView addSubview:imageView];
-//        imageView.backgroundColor = [UIColor yellowColor];
-        imageView.contentMode = UIViewContentModeScaleAspectFill;
-        imageView.clipsToBounds = YES;
-        [imageView setImageWithURL:[NSURL URLWithString:messageText]];
-//        [imageView sizeToFit];
-        UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedImage:)];
-        [imageView addGestureRecognizer:tap];
+//        OLImageView* imageView = [[OLImageView alloc] initWithFrame:CGRectMake(0, 40, 320, imageHeight)];
+//        imageView.tag = 3;
+//        [self.contentView addSubview:imageView];
+//        imageView.contentMode = UIViewContentModeScaleAspectFit;
+//        [imageView setImageWithURL:[NSURL URLWithString:messageText]];
+//        UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedImage:)];
+//        [imageView addGestureRecognizer:tap];
+        webView.delegate = self;
+        webView.scrollView.scrollEnabled = NO;
+        NSString* webHTML = [NSString stringWithFormat:@"<img src=\"%@\" style=\"max-height:%fpx;\"/>", messageText, imageHeight];
+        webView.contentMode = UIViewContentModeLeft;
+        [webView loadHTMLString:webHTML baseURL:baseURL];
     }
     else {
 //        textLabel.text = messageText;
@@ -156,7 +162,10 @@
 + (CGFloat) heightForMessage:(CampfireMessage*)message {
     CGFloat height = 32;
     
-    if ([self messageContainsOnlyImageLink:message.body] || [self messageContainsOnlyImageLink:message.description]) {
+    if ([message.type isEqualToString:@"SoundMessage"]) {
+        height = 80;
+    }
+    else if ([self messageContainsOnlyImageLink:message.body] || [self messageContainsOnlyImageLink:message.description]) {
         height = 140;
     }
     else {

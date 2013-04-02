@@ -37,6 +37,9 @@
 
 -(void)setImage:(UIImage *)image
 {
+    CGFloat width = MIN(320, image.size.width);
+    CGFloat height = MIN(100, image.size.height);
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, width, height);
     [self stopAnimating];
     self.currentFrameIndex = 0;
     self.animatedImage = nil;
