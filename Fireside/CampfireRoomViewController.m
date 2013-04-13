@@ -13,6 +13,8 @@
 #import "DAKeyboardControl.h"
 #import "CampfireUser.h"
 #import "CampfireMessageCell.h"
+#import "CampfireEnterMessageCell.h"
+#import "CampfireTimestampMessageCell.h"
 #import <AVFoundation/AVFoundation.h>
 #import "CampfireSoundLoader.h"
 
@@ -153,6 +155,12 @@
 //                NSLog(@"message: %@", message.attributes);
                 [self addNewMessage:message];
             }
+            else if ([message.type isEqualToString:@"TimestampMessage"]) {
+                [self addNewMessage:message];
+            }
+            else if ([message.type isEqualToString:@"EnterMessage"] || [message.type isEqualToString:@"LeaveMessage"]) {
+                [self addNewMessage:message];
+            }
             else {
                 NSLog(@"Unhandled message type: %@", message.type);
             }
@@ -191,7 +199,24 @@
     [self.roomTableView insertRowsAtIndexPaths:@[newRowIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self.roomTableView endUpdates];
     
-    [self scrollToBottom]; // FIXME only scroll to bottom if already at the bottom
+    if ([self isAtBottom]) {
+        [self scrollToBottom];
+    }
+}
+
+- (BOOL) isAtBottom {
+    BOOL isBottom = NO;
+    
+    CGSize size = [self.roomTableView frame].size;
+    CGPoint offset = [self.roomTableView contentOffset];
+    CGSize contentSize = [self.roomTableView contentSize];
+    
+    // Are we at the bottom?
+    if (offset.y + size.height >= contentSize.height-80) {
+        isBottom = YES;
+    }
+    
+    return isBottom;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -209,7 +234,7 @@
     UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:viewFrame];
     toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin;
     toolbar.tintColor = [UIColor darkGrayColor];
-    viewFrame = CGRectMake(0, 0, 240, 32);
+    viewFrame = CGRectMake(0, 0, 215, 32);
     inputTextField = [[UITextField alloc] initWithFrame:viewFrame];
     inputTextField.backgroundColor = [UIColor whiteColor];
     inputTextField.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleHeight;
@@ -219,7 +244,9 @@
     UIBarButtonItem* barText = [[UIBarButtonItem alloc] initWithCustomView:inputTextField];
     
     UIBarButtonItem* sendButton = [[UIBarButtonItem alloc] initWithTitle:@"send" style:UIBarButtonItemStyleBordered target:self action:@selector(tappedSendButton:)];
-    toolbar.items = @[barText, sendButton];
+    
+    UIBarButtonItem* soundButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(tappedSoundButton:)];
+    toolbar.items = @[soundButton, barText, sendButton];
     
     [self.view addSubview:toolbar];
     
@@ -235,24 +262,36 @@
         CGRect tableViewFrame = weakSelf.roomTableView.frame;
         tableViewFrame.size.height = toolBarFrame.origin.y;
         weakSelf.roomTableView.frame = tableViewFrame;
+        [weakSelf scrollToBottom];
     }];
-    
-    // FIXME need to scroll to bottom after keyboard shows
 }
 
 - (void) tappedSendButton:(id)sender {
-    [self sendTextMessage];
+    [self sendMessage];
 }
 
-- (void) sendTextMessage {
+- (void) tappedSoundButton:(id)sender {
+    
+}
+
+- (void) sendMessage {
     CampfireMessage* message = [[CampfireMessage alloc] init];
-    message.type = @"TextMessage";
-    message.body = inputTextField.text;
+    NSString* messageBody = inputTextField.text;
+    
+    if ([[inputTextField.text substringToIndex:5] isEqualToString:@"/play"]) {
+        message.type = @"SoundMessage";
+        messageBody = [messageBody substringFromIndex:6];
+    }
+    else {
+        message.type = @"TextMessage";
+    }
+    
+    message.body = messageBody;
     
     [CampfireMessageAPI speakMessage:message toRoom:self.room success:^(CampfireMessage* message) {
         inputTextField.text = @"";
     } failure:^(NSError *error) {
-        //NSLog(@"didn't speak! %@", error);
+        NSLog(@"didn't speak! %@", error);
     }];
 }
 
@@ -279,14 +318,33 @@
     CampfireMessage* message = [messages objectAtIndex:indexPath.row];
     UITableViewCell* cell = nil;
     
-    CampfireMessageCell* messageCell = [tableView dequeueReusableCellWithIdentifier:@"TextMessageCell"];
-    
-    if (messageCell == nil) {
-        messageCell = [[CampfireMessageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TextMessageCell"];
+    if ([message.type isEqualToString:@"TimestampMessage"]) {
+        CampfireTimestampMessageCell* timestampCell = [tableView dequeueReusableCellWithIdentifier:@"TimeMessageCell"];
+        if (timestampCell == nil) {
+            timestampCell = [[CampfireTimestampMessageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TimeMessageCell"];
+        }
+        
+        [timestampCell displayMessage:message];
+        cell = timestampCell;
     }
-    
-    [messageCell displayMessage:message];
-    cell = messageCell;
+    else if ([message.type isEqualToString:@"EnterMessage"] || [message.type isEqualToString:@"LeaveMessage"]) {
+        CampfireEnterMessageCell* enterCell = [tableView dequeueReusableCellWithIdentifier:@"EnterMessageCell"];
+        if (enterCell == nil) {
+            enterCell = [[CampfireEnterMessageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"EnterMessageCell"];
+        }
+        [enterCell displayMessage:message];
+        cell = enterCell;
+    }
+    else {
+        CampfireMessageCell* messageCell = [tableView dequeueReusableCellWithIdentifier:@"TextMessageCell"];
+        
+        if (messageCell == nil) {
+            messageCell = [[CampfireMessageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TextMessageCell"];
+        }
+        
+        [messageCell displayMessage:message];
+        cell = messageCell;
+    }
     
     return cell;
 }

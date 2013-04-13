@@ -158,11 +158,18 @@
     return onlyContainsLink;
 }
 
+// FIXME this isn't very nice
 + (CGFloat) heightForMessage:(CampfireMessage*)message {
     CGFloat height = 32;
     
     if ([message.type isEqualToString:@"SoundMessage"]) {
         height = 80;
+    }
+    else if ([message.type isEqualToString:@"TimestampMessage"]) {
+        height = 29;
+    }
+    else if ([message.type isEqualToString:@"EnterMessage"] || [message.type isEqualToString:@"LeaveMessage"]) {
+        height = 29;
     }
     else if ([self messageContainsOnlyImageLink:message.body] || [self messageContainsOnlyImageLink:message.description]) {
         height = 140;

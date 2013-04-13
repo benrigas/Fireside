@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		215C6BCE1710545D00D79944 /* CampfireTimestampMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C6BCD1710545D00D79944 /* CampfireTimestampMessageCell.m */; };
+		215C6BCF1710545D00D79944 /* CampfireTimestampMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 215C6BCD1710545D00D79944 /* CampfireTimestampMessageCell.m */; };
 		216C6D9716EBD24E00575E6A /* FiresideSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6D9616EBD24E00575E6A /* FiresideSession.m */; };
 		216C6D9816EBD24E00575E6A /* FiresideSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6D9616EBD24E00575E6A /* FiresideSession.m */; };
 		216C6D9B16EBD6F300575E6A /* CampfireAccountsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 216C6D9A16EBD6F300575E6A /* CampfireAccountsListViewController.m */; };
@@ -1838,6 +1840,8 @@
 		21D3499716EBB7E600C38B54 /* LaunchPadAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3499516EBB7E600C38B54 /* LaunchPadAuthorization.m */; };
 		21D3499A16EBB87400C38B54 /* LaunchPadIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3499916EBB87400C38B54 /* LaunchPadIdentity.m */; };
 		21D3499B16EBB87400C38B54 /* LaunchPadIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D3499916EBB87400C38B54 /* LaunchPadIdentity.m */; };
+		21D4152E1719F5E200998464 /* CampfireEnterMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D4152D1719F5E200998464 /* CampfireEnterMessageCell.m */; };
+		21D4152F1719F5E200998464 /* CampfireEnterMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D4152D1719F5E200998464 /* CampfireEnterMessageCell.m */; };
 		21D480D216ECC3D8005E1D22 /* CampfireMessageAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D480D116ECC3D8005E1D22 /* CampfireMessageAPI.m */; };
 		21D480D316ECC3D8005E1D22 /* CampfireMessageAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D480D116ECC3D8005E1D22 /* CampfireMessageAPI.m */; };
 		21F9308616F4B1220091C1DB /* REMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9307F16F4B1220091C1DB /* REMenu.m */; };
@@ -1871,6 +1875,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		215C6BCC1710545D00D79944 /* CampfireTimestampMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireTimestampMessageCell.h; sourceTree = "<group>"; };
+		215C6BCD1710545D00D79944 /* CampfireTimestampMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireTimestampMessageCell.m; sourceTree = "<group>"; };
 		216C6D9516EBD24E00575E6A /* FiresideSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FiresideSession.h; sourceTree = "<group>"; };
 		216C6D9616EBD24E00575E6A /* FiresideSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiresideSession.m; sourceTree = "<group>"; };
 		216C6D9916EBD6F300575E6A /* CampfireAccountsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireAccountsListViewController.h; sourceTree = "<group>"; };
@@ -2839,6 +2845,8 @@
 		21D3499516EBB7E600C38B54 /* LaunchPadAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchPadAuthorization.m; sourceTree = "<group>"; };
 		21D3499816EBB87400C38B54 /* LaunchPadIdentity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchPadIdentity.h; sourceTree = "<group>"; };
 		21D3499916EBB87400C38B54 /* LaunchPadIdentity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchPadIdentity.m; sourceTree = "<group>"; };
+		21D4152C1719F5E200998464 /* CampfireEnterMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireEnterMessageCell.h; sourceTree = "<group>"; };
+		21D4152D1719F5E200998464 /* CampfireEnterMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireEnterMessageCell.m; sourceTree = "<group>"; };
 		21D480D016ECC3D8005E1D22 /* CampfireMessageAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireMessageAPI.h; sourceTree = "<group>"; };
 		21D480D116ECC3D8005E1D22 /* CampfireMessageAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireMessageAPI.m; sourceTree = "<group>"; };
 		21F9307E16F4B1220091C1DB /* REMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REMenu.h; sourceTree = "<group>"; };
@@ -2909,6 +2917,10 @@
 			children = (
 				21B71C4A16FCEF6D0099F2A8 /* CampfireMessageCell.h */,
 				21B71C4B16FCEF6D0099F2A8 /* CampfireMessageCell.m */,
+				215C6BCC1710545D00D79944 /* CampfireTimestampMessageCell.h */,
+				215C6BCD1710545D00D79944 /* CampfireTimestampMessageCell.m */,
+				21D4152C1719F5E200998464 /* CampfireEnterMessageCell.h */,
+				21D4152D1719F5E200998464 /* CampfireEnterMessageCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -5949,6 +5961,8 @@
 				21B71C5716FE2C7A0099F2A8 /* OLImage.m in Sources */,
 				21B71C5916FE2C7A0099F2A8 /* OLImageView.m in Sources */,
 				21B71C6516FFCC3A0099F2A8 /* CampfireSoundLoader.m in Sources */,
+				215C6BCE1710545D00D79944 /* CampfireTimestampMessageCell.m in Sources */,
+				21D4152E1719F5E200998464 /* CampfireEnterMessageCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5999,6 +6013,8 @@
 				21B71C5816FE2C7A0099F2A8 /* OLImage.m in Sources */,
 				21B71C5A16FE2C7A0099F2A8 /* OLImageView.m in Sources */,
 				21B71C6616FFCC3A0099F2A8 /* CampfireSoundLoader.m in Sources */,
+				215C6BCF1710545D00D79944 /* CampfireTimestampMessageCell.m in Sources */,
+				21D4152F1719F5E200998464 /* CampfireEnterMessageCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

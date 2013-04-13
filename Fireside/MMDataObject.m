@@ -141,7 +141,7 @@
                         // if there's no formatter, then do default mappings
                         // FIXME to not use blocks here, smells funny
                         if ([propertyAttributes.type isEqualToString:@"NSDate"]) {
-                            FormatBlock stringToDate = [MMDataObject stringToDateWithFormat:@"yyyy-mm-dd HH:mm:ss"];
+                            FormatBlock stringToDate = [MMDataObject stringToDateWithFormat:@"yyyy/MM/dd HH:mm:ss ZZZ"];
                             attribute = stringToDate(attribute);
                         }
                         else if ([propertyAttributes.type isEqualToString:@"NSArray"]

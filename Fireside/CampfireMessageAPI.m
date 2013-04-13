@@ -56,7 +56,7 @@
             //NSLog(@"recent messages\n%@", responseObject);
             NSMutableArray* recentMessages = [[NSMutableArray alloc] init];
             for (NSDictionary* attributes in [responseObject objectForKey:@"messages"]) {
-                //NSLog(@"attributes: %@", attributes);
+                NSLog(@"attributes: %@", attributes);
                 CampfireMessage* message = [[CampfireMessage alloc] initWithAttributes:attributes];
                 [recentMessages addObject:message];
             }
