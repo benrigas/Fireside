@@ -19,6 +19,14 @@
     return self;
 }
 
+- (void)setTitleFont:(UIFont *)titleFont
+{
+    if (_titleFont != titleFont) {
+        _titleFont = titleFont;
+        [self.titleLabel setFont:_titleFont];
+    }
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

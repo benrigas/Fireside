@@ -72,7 +72,7 @@
     NSMutableDictionary* params = nil;
     
     [[CampfireAPIClient sharedInstance] getPath:urlPath parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"room response: %@", responseObject);
+//        NSLog(@"room response: %@", responseObject);
         CampfireRoom* room = [[CampfireRoom alloc] initWithAttributes:responseObject];
         
         if (success) {

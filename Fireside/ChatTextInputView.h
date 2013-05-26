@@ -10,4 +10,5 @@
 
 @interface ChatTextInputView : UITextField
 
+
 @end

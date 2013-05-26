@@ -1844,6 +1844,11 @@
 		21D4152F1719F5E200998464 /* CampfireEnterMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D4152D1719F5E200998464 /* CampfireEnterMessageCell.m */; };
 		21D480D216ECC3D8005E1D22 /* CampfireMessageAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D480D116ECC3D8005E1D22 /* CampfireMessageAPI.m */; };
 		21D480D316ECC3D8005E1D22 /* CampfireMessageAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 21D480D116ECC3D8005E1D22 /* CampfireMessageAPI.m */; };
+		21F4E07D1724AAEC0023CFF7 /* WWAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F4E07C1724AAEC0023CFF7 /* WWAppearance.m */; };
+		21F4E085172DC4EC0023CFF7 /* 53-house.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F4E083172DC4EC0023CFF7 /* 53-house.png */; };
+		21F4E086172DC4EC0023CFF7 /* 53-house@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F4E084172DC4EC0023CFF7 /* 53-house@2x.png */; };
+		21F4E089172DC97C0023CFF7 /* 38-house.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F4E087172DC97C0023CFF7 /* 38-house.png */; };
+		21F4E08A172DC97C0023CFF7 /* 38-house@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21F4E088172DC97C0023CFF7 /* 38-house@2x.png */; };
 		21F9308616F4B1220091C1DB /* REMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9307F16F4B1220091C1DB /* REMenu.m */; };
 		21F9308716F4B1220091C1DB /* REMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9307F16F4B1220091C1DB /* REMenu.m */; };
 		21F9308816F4B1220091C1DB /* REMenuContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21F9308116F4B1220091C1DB /* REMenuContainerView.m */; };
@@ -1862,6 +1867,8 @@
 		21FACB3016EBE7A9000E7A7B /* CampfireAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB2E16EBE7A9000E7A7B /* CampfireAPIClient.m */; };
 		21FACB3316EC1976000E7A7B /* CampfireRoomsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB3216EC1976000E7A7B /* CampfireRoomsListViewController.m */; };
 		21FACB3416EC1976000E7A7B /* CampfireRoomsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FACB3216EC1976000E7A7B /* CampfireRoomsListViewController.m */; };
+		21FC2FCE1735612900883B7C /* SendButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC2FCD1735612900883B7C /* SendButton.m */; };
+		21FC2FD1173565C100883B7C /* ChatTextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FC2FD0173565C000883B7C /* ChatTextInputView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2849,6 +2856,12 @@
 		21D4152D1719F5E200998464 /* CampfireEnterMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireEnterMessageCell.m; sourceTree = "<group>"; };
 		21D480D016ECC3D8005E1D22 /* CampfireMessageAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireMessageAPI.h; sourceTree = "<group>"; };
 		21D480D116ECC3D8005E1D22 /* CampfireMessageAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireMessageAPI.m; sourceTree = "<group>"; };
+		21F4E07B1724AAEC0023CFF7 /* WWAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WWAppearance.h; sourceTree = "<group>"; };
+		21F4E07C1724AAEC0023CFF7 /* WWAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WWAppearance.m; sourceTree = "<group>"; };
+		21F4E083172DC4EC0023CFF7 /* 53-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house.png"; sourceTree = "<group>"; };
+		21F4E084172DC4EC0023CFF7 /* 53-house@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house@2x.png"; sourceTree = "<group>"; };
+		21F4E087172DC97C0023CFF7 /* 38-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "38-house.png"; sourceTree = "<group>"; };
+		21F4E088172DC97C0023CFF7 /* 38-house@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "38-house@2x.png"; sourceTree = "<group>"; };
 		21F9307E16F4B1220091C1DB /* REMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REMenu.h; sourceTree = "<group>"; };
 		21F9307F16F4B1220091C1DB /* REMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REMenu.m; sourceTree = "<group>"; };
 		21F9308016F4B1220091C1DB /* REMenuContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REMenuContainerView.h; sourceTree = "<group>"; };
@@ -2867,6 +2880,10 @@
 		21FACB2E16EBE7A9000E7A7B /* CampfireAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireAPIClient.m; sourceTree = "<group>"; };
 		21FACB3116EC1976000E7A7B /* CampfireRoomsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CampfireRoomsListViewController.h; sourceTree = "<group>"; };
 		21FACB3216EC1976000E7A7B /* CampfireRoomsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CampfireRoomsListViewController.m; sourceTree = "<group>"; };
+		21FC2FCC1735612900883B7C /* SendButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendButton.h; sourceTree = "<group>"; };
+		21FC2FCD1735612900883B7C /* SendButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendButton.m; sourceTree = "<group>"; };
+		21FC2FCF173565C000883B7C /* ChatTextInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTextInputView.h; sourceTree = "<group>"; };
+		21FC2FD0173565C000883B7C /* ChatTextInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTextInputView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2921,6 +2938,10 @@
 				215C6BCD1710545D00D79944 /* CampfireTimestampMessageCell.m */,
 				21D4152C1719F5E200998464 /* CampfireEnterMessageCell.h */,
 				21D4152D1719F5E200998464 /* CampfireEnterMessageCell.m */,
+				21FC2FCC1735612900883B7C /* SendButton.h */,
+				21FC2FCD1735612900883B7C /* SendButton.m */,
+				21FC2FCF173565C000883B7C /* ChatTextInputView.h */,
+				21FC2FD0173565C000883B7C /* ChatTextInputView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -3875,6 +3896,8 @@
 		21D3490016EB731D00C38B54 /* Fireside */ = {
 			isa = PBXGroup;
 			children = (
+				21F4E07E172DC4860023CFF7 /* Icons */,
+				21D41530171A21EF00998464 /* Appearance */,
 				21B726A217075B360099F2A8 /* CSS */,
 				21B71C6C1703DF160099F2A8 /* emoji */,
 				21B71C4916FCEF510099F2A8 /* Views */,
@@ -4002,6 +4025,26 @@
 			);
 			name = MMDataObject;
 			path = Fireside;
+			sourceTree = "<group>";
+		};
+		21D41530171A21EF00998464 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				21F4E07B1724AAEC0023CFF7 /* WWAppearance.h */,
+				21F4E07C1724AAEC0023CFF7 /* WWAppearance.m */,
+			);
+			name = Appearance;
+			sourceTree = "<group>";
+		};
+		21F4E07E172DC4860023CFF7 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				21F4E087172DC97C0023CFF7 /* 38-house.png */,
+				21F4E088172DC97C0023CFF7 /* 38-house@2x.png */,
+				21F4E083172DC4EC0023CFF7 /* 53-house.png */,
+				21F4E084172DC4EC0023CFF7 /* 53-house@2x.png */,
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 		21F9307D16F4B1220091C1DB /* REMenu */ = {
@@ -5008,6 +5051,10 @@
 				21B7269E1703DF6D0099F2A8 /* zero.png in Resources */,
 				21B726A01703DF6D0099F2A8 /* zzz.png in Resources */,
 				21B726A417075B500099F2A8 /* message.css in Resources */,
+				21F4E085172DC4EC0023CFF7 /* 53-house.png in Resources */,
+				21F4E086172DC4EC0023CFF7 /* 53-house@2x.png in Resources */,
+				21F4E089172DC97C0023CFF7 /* 38-house.png in Resources */,
+				21F4E08A172DC97C0023CFF7 /* 38-house@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5963,6 +6010,9 @@
 				21B71C6516FFCC3A0099F2A8 /* CampfireSoundLoader.m in Sources */,
 				215C6BCE1710545D00D79944 /* CampfireTimestampMessageCell.m in Sources */,
 				21D4152E1719F5E200998464 /* CampfireEnterMessageCell.m in Sources */,
+				21F4E07D1724AAEC0023CFF7 /* WWAppearance.m in Sources */,
+				21FC2FCE1735612900883B7C /* SendButton.m in Sources */,
+				21FC2FD1173565C100883B7C /* ChatTextInputView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

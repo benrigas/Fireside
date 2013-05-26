@@ -10,4 +10,10 @@
 
 @interface WWAppearance : NSObject
 
++ (UIImage*) navigationBarBackgroundImage;
++ (UIImage*) barButtonItemBackgroundImage;
++ (UIImage*) toolbarBackgroundImage;
++ (UIImage*) textfieldBackgroundImage;
++ (UIImage*) sendButtonBackgroundImage;
+
 @end

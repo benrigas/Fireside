@@ -17,13 +17,17 @@
 #import "CampfireTimestampMessageCell.h"
 #import <AVFoundation/AVFoundation.h>
 #import "CampfireSoundLoader.h"
+#import "WWAppearance.h"
+#import "SendButton.h"
+#import "ChatTextInputView.h"
 
 @interface CampfireRoomViewController ()
 {
     NSMutableArray* messages;
     NSNumber* lastMessageId;
     NSTimer* getMessagesTimer;
-    UITextField* inputTextField;
+    ChatTextInputView* inputTextField;
+    SendButton* sendButton;
     REMenu* _menu;
     AVAudioPlayer* player;
     BOOL doingInitialLoad;
@@ -55,7 +59,18 @@
     getMessagesTimer = [NSTimer timerWithTimeInterval:4.0 target:self selector:@selector(getMessages:) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:getMessagesTimer forMode:NSDefaultRunLoopMode];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(tappedMenu:)];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"38-house"] style:UIBarButtonItemStylePlain target:self action:@selector(tappedMenu:)];
+    
+    UIButton* homeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    homeButton.frame = CGRectMake(0, 0, 38, 38);
+    [homeButton setImage:[UIImage imageNamed:@"38-house"] forState:UIControlStateNormal];
+    [homeButton addTarget:self action:@selector(tappedMenu:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem* homeBarButton = [[UIBarButtonItem alloc] initWithCustomView:homeButton];
+    
+    
+    self.navigationItem.rightBarButtonItem = homeBarButton;
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"H" style:UIBarButtonItemStylePlain target:self action:@selector(tappedMenu:)];
     
     self.navigationItem.hidesBackButton = YES;
     
@@ -233,21 +248,22 @@
     CGRect viewFrame = CGRectMake(0, self.view.frame.size.height-44, self.view.frame.size.width, 44);
     UIToolbar* toolbar = [[UIToolbar alloc] initWithFrame:viewFrame];
     toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin;
-    toolbar.tintColor = [UIColor darkGrayColor];
-    viewFrame = CGRectMake(0, 0, 215, 32);
-    inputTextField = [[UITextField alloc] initWithFrame:viewFrame];
-    inputTextField.backgroundColor = [UIColor whiteColor];
-    inputTextField.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleHeight;
-    //    inputTextField.keyboardAppearance = UIKeyboardAppearanceAlert;
-    inputTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    
-    UIBarButtonItem* barText = [[UIBarButtonItem alloc] initWithCustomView:inputTextField];
-    
-    UIBarButtonItem* sendButton = [[UIBarButtonItem alloc] initWithTitle:@"send" style:UIBarButtonItemStyleBordered target:self action:@selector(tappedSendButton:)];
-    
-    UIBarButtonItem* soundButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(tappedSoundButton:)];
-    toolbar.items = @[soundButton, barText, sendButton];
-    
+    viewFrame = CGRectMake(0, 2, 260, 40);
+    inputTextField = [[ChatTextInputView alloc] initWithFrame:viewFrame];
+
+    sendButton = [SendButton buttonWithType:UIButtonTypeCustom];
+    sendButton.frame = CGRectMake(260, 3, 58, 39);
+    [sendButton setTitle:@"send" forState:UIControlStateNormal];
+    [sendButton addTarget:self action:@selector(tappedSendButton:) forControlEvents:UIControlEventTouchUpInside];
+
+    UIImageView *borderView = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, inputTextField.frame.size.width, inputTextField.frame.size.height)];
+    borderView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    UIImage *textFieldImage = [[WWAppearance textfieldBackgroundImage] resizableImageWithCapInsets:UIEdgeInsetsMake(15, 8, 15, 8)];
+    borderView.image = textFieldImage;
+    [inputTextField addSubview: borderView];
+    [inputTextField sendSubviewToBack: borderView];
+    [toolbar addSubview:inputTextField];
+    [toolbar addSubview:sendButton];
     [self.view addSubview:toolbar];
     
     self.view.keyboardTriggerOffset = toolbar.bounds.size.height;
@@ -262,7 +278,7 @@
         CGRect tableViewFrame = weakSelf.roomTableView.frame;
         tableViewFrame.size.height = toolBarFrame.origin.y;
         weakSelf.roomTableView.frame = tableViewFrame;
-        [weakSelf scrollToBottom];
+        //[weakSelf scrollToBottom];
     }];
 }
 
@@ -270,15 +286,11 @@
     [self sendMessage];
 }
 
-- (void) tappedSoundButton:(id)sender {
-    
-}
-
 - (void) sendMessage {
     CampfireMessage* message = [[CampfireMessage alloc] init];
     NSString* messageBody = inputTextField.text;
     
-    if ([[inputTextField.text substringToIndex:5] isEqualToString:@"/play"]) {
+    if (messageBody.length >= 5 && [[messageBody substringToIndex:5] isEqualToString:@"/play"]) {
         message.type = @"SoundMessage";
         messageBody = [messageBody substringFromIndex:6];
     }

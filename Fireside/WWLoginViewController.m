@@ -11,9 +11,12 @@
 #import "LaunchPadAPIClient.h"
 #import "FiresideSession.h"
 #import "CampfireAPIClient.h"
+#import "AFNetworking.h"
 
 @interface WWLoginViewController ()
-
+{
+    BOOL signedIn;
+}
 @end
 
 @implementation WWLoginViewController
@@ -31,6 +34,36 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(HTTPOperationDidFinish:) name:AFNetworkingOperationDidFinishNotification object:nil];
+}
+
+- (void)HTTPOperationDidFinish:(NSNotification *)notification {
+    AFHTTPRequestOperation *operation = (AFHTTPRequestOperation *)[notification object];
+    
+    if (![operation isKindOfClass:[AFHTTPRequestOperation class]]) {
+        return;
+    }
+    
+    if ([operation.response statusCode] == 401) {
+        
+        FiresideSession* session = [FiresideSession savedSession];
+        session.oAuthAuthorization = nil;
+        session.launchPadAuthorization = nil;
+        session.lastRoom = nil;
+        session.currentLaunchPadAccount = nil;
+        
+        [session saveSession];
+        
+        // enqueue a new request operation here
+        NSLog(@"we got a 401, time to re-authenticate");
+        if (signedIn) {
+            signedIn = NO;  
+            [self dismissViewControllerAnimated:NO completion:^{
+            }];
+        }
+//        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -48,25 +81,21 @@
     // if the access token expires in less than SOME_TIME, refresh
     
     // refresh token flow
-    [LaunchPadAuthenticationAPI requestTokenWithRefreshToken:oAuth.refreshToken success:^(OAuthAuthorization *authorization) {
-        [session setOAuthAuthorization:authorization];
-        authorization.refreshToken = oAuth.refreshToken; // hang on to the refresh token for later
-        [session saveSession];
-
-        [[LaunchPadAPIClient sharedInstance] setDefaultHeader:@"Authorization"
-                                                        value:[NSString stringWithFormat:@"BEARER %@", authorization.accessToken]];
-        NSLog(@"refreshed!");
-
-    } failure:^(NSError *error) {
-        NSLog(@"error with refresh token");
-    }];
+//    [LaunchPadAuthenticationAPI requestTokenWithRefreshToken:oAuth.refreshToken success:^(OAuthAuthorization *authorization) {
+//        [session setOAuthAuthorization:authorization];
+//        authorization.refreshToken = oAuth.refreshToken; // hang on to the refresh token for later
+//        [session saveSession];
+//
+//        [[LaunchPadAPIClient sharedInstance] setDefaultHeader:@"Authorization"
+//                                                        value:[NSString stringWithFormat:@"BEARER %@", authorization.accessToken]];
+//        NSLog(@"refreshed!");
+//
+//    } failure:^(NSError *error) {
+//        NSLog(@"error with refresh token");
+//    }];
     
     if (launchpadAuth) {
-        // we're already authenticated.. let's go!
-        NSLog(@"IN!");
-        
-        // list all the campfire accounts? if there's just one then we should go to it.
-        
+        // we're already authenticated.. let's go!                
         [self performSegueWithIdentifier:@"ShowAccountsList" sender:self];
         
     }
@@ -74,7 +103,6 @@
         // needs login
         NSLog(@"NOT IN YET!");
     }
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,9 +113,10 @@
 
 - (IBAction)tappedLoginButton:(id)sender {
     OAuth2WebViewController* webAuth = [[OAuth2WebViewController alloc] init];
+    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:webAuth];
     webAuth.delegate = self;
     webAuth.authenticationURL = [LaunchPadAuthenticationAPI urlForAuthorization];
-    [self presentViewController:webAuth animated:YES completion:nil];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void) oauth2WebViewController:(OAuth2WebViewController *)webAuth didFinishWithVerificationCode:(NSString *)verificationCode {

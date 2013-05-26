@@ -30,11 +30,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    authWebView = [[UIWebView alloc] initWithFrame:self.view.frame];
+    authWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    authWebView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:authWebView];
     
     authWebView.delegate = self;
-    
+    self.title = @"Sign in to Campfire";
     if (self.authenticationURL) {
         [self loadAuthenticationURL];
     }

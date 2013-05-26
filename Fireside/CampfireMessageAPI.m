@@ -22,7 +22,7 @@
     
     [[CampfireAPIClient sharedInstance] postPath:urlPath parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         if (success) {
-            NSLog(@"response from sending: %@", responseObject);
+//            NSLog(@"response from sending: %@", responseObject);
             CampfireMessage* message = [[CampfireMessage alloc] initWithAttributes:[responseObject objectForKey:@"message"]];
             success(message);
         }
@@ -56,7 +56,7 @@
             //NSLog(@"recent messages\n%@", responseObject);
             NSMutableArray* recentMessages = [[NSMutableArray alloc] init];
             for (NSDictionary* attributes in [responseObject objectForKey:@"messages"]) {
-                NSLog(@"attributes: %@", attributes);
+//                NSLog(@"attributes: %@", attributes);
                 CampfireMessage* message = [[CampfireMessage alloc] initWithAttributes:attributes];
                 [recentMessages addObject:message];
             }

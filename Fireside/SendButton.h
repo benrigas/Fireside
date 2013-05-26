@@ -10,4 +10,6 @@
 
 @interface SendButton : UIButton
 
+@property (nonatomic, strong) UIFont *titleFont UI_APPEARANCE_SELECTOR;
+
 @end
